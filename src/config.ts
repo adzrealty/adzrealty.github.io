@@ -12,9 +12,9 @@ export const SITE = {
   showArchives: true,
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
-    text: "Contact",
-    url: "https://facebook.com/adzph",
+    enabled: false,
+    text: "Suggest Changes",
+    url: "",
   },
   dynamicOgImage: true,
   lang: "en", // html lang code. Set this empty and default will be "en"
