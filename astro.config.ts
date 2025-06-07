@@ -26,15 +26,12 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
+ // --- ADD THIS BLOCK BACK ---
   image: {
-    // Ensure the service entrypoint is correctly defined and matches what's installed
     service: {
-      entrypoint: "astro/assets/services/sharp", // This line is crucial for Sharp
+      entrypoint: "astro/assets/services/sharp",
     },
-    // The 'layout' property relies on the image service being properly recognized.
-    // If 'sharp' is causing issues, removing this and relying on default layout
-    // might temporarily resolve the type error, but it's better to fix the root.
-    layout: "constrained", // This should be valid IF the image service is correctly set up.
+    layout: "constrained",
   },
-  // Ensure no 'experimental' block here
+  // --- END ADDITION ---
 });
