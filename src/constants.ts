@@ -5,7 +5,7 @@ import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
-import IconTelegram from "@/assets/icons/IconTelegram.svg";
+//import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
 import { SITE } from "@/config";
 
@@ -19,25 +19,25 @@ interface Social {
 export const SOCIALS: Social[] = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/adzrealty",
     linkTitle: `${SITE.title} on Github`,
     icon: IconGitHub,
   },
   {
     name: "X",
-    href: "https://x.com/username",
+    href: "https://x.com/cliffordx",
     linkTitle: `${SITE.title} on X`,
     icon: IconBrandX,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/username/",
+    href: "https://www.linkedin.com/in/cliffordx/",
     linkTitle: `${SITE.title} on LinkedIn`,
     icon: IconLinkedin,
   },
   {
     name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    href: "mailto:adzrealty@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     icon: IconMail,
   },
@@ -46,7 +46,7 @@ export const SOCIALS: Social[] = [
 export const SHARE_LINKS: Social[] = [
   {
     name: "WhatsApp",
-    href: "https://wa.me/?text=",
+    href: "https://wa.me/?text=09177717460",
     linkTitle: `Share this post via WhatsApp`,
     icon: IconWhatsapp,
   },
@@ -62,22 +62,22 @@ export const SHARE_LINKS: Social[] = [
     linkTitle: `Share this post on X`,
     icon: IconBrandX,
   },
-  {
-    name: "Telegram",
-    href: "https://t.me/share/url?url=",
-    linkTitle: `Share this post via Telegram`,
-    icon: IconTelegram,
-  },
-  {
-    name: "Pinterest",
-    href: "https://pinterest.com/pin/create/button/?url=",
-    linkTitle: `Share this post on Pinterest`,
-    icon: IconPinterest,
-  },
-  {
-    name: "Mail",
-    href: "mailto:?subject=See%20this%20post&body=",
-    linkTitle: `Share this post via email`,
-    icon: IconMail,
-  },
+  //{
+  //  name: "Telegram",
+  //  href: "https://t.me/share/url?url=",
+  //  linkTitle: `Share this post via Telegram`,
+  //  icon: IconTelegram,
+  //},
+  //{
+  //  name: "Pinterest",
+  //  href: "https://pinterest.com/pin/create/button/?url=",
+  //  linkTitle: `Share this post on Pinterest`,
+  //  icon: IconPinterest,
+  //},
+  //{
+  //  name: "Mail",
+  //  href: "mailto:?subject=See%20this%20post&body=",
+  //  linkTitle: `Share this post via email`,
+  //  icon: IconMail,
+  //},
 ] as const;
