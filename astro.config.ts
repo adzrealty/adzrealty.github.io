@@ -27,10 +27,14 @@ export default defineConfig({
     },
   },
   image: {
-    // Adding service explicitly might resolve type issues
+    // Ensure the service entrypoint is correctly defined and matches what's installed
     service: {
-      entrypoint: "astro/assets/services/sharp",
+      entrypoint: "astro/assets/services/sharp", // This line is crucial for Sharp
     },
-    layout: "constrained", // Keep this as it's the correct syntax for latest Astro
+    // The 'layout' property relies on the image service being properly recognized.
+    // If 'sharp' is causing issues, removing this and relying on default layout
+    // might temporarily resolve the type error, but it's better to fix the root.
+    layout: "constrained", // This should be valid IF the image service is correctly set up.
   },
+  // Ensure no 'experimental' block here
 });
