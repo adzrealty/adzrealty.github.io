@@ -1,20 +1,55 @@
-name: Deploy to GitHub Pages
+# .github/workflows/deploy.yml
+name: Deploy Astro Project to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main # Only deploy when changes are pushed to the 'main' branch
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
+
+    # Set permissions for GitHub Actions to deploy to GitHub Pages
+    permissions:
+      contents: write # To push to the gh-pages branch or main branch
+      pages: write    # To deploy to GitHub Pages (required for `actions/deploy-pages`)
+      id-token: write # Required for OIDC authentication by `actions/deploy-pages`
+
+    # Configure Node.js version and caching
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # This makes the URL available in the workflow summary
+
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.11.1 # Ensure this matches your packageManager version
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Use a stable Node.js version
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile # Use --frozen-lockfile for CI/CD robustness
+
+      - name: Build Astro project
+        run: pnpm run build # This will output to the `dist` directory by default
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # The directory containing your built static files
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # This action deploys the artifact to GitHub Pages
