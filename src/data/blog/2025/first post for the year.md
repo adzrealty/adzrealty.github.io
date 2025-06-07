@@ -4,7 +4,7 @@ pubDatetime: 2025-06-07T15:20:00Z
 modDatetime: 2025-06-07T15:20:00Z
 title: First Post for the year 2025
 slug: first-post-for-the-year-2025
-featured: false
+featured: true
 draft: false
 tags:
   - announcement
