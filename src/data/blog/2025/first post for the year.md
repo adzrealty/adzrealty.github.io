@@ -1,7 +1,7 @@
 ---
 author: Clifford Enoc
-pubDatetime: 2025-06-07T15:20:00Z
-modDatetime: 2025-06-07T15:20:00Z
+pubDatetime: 2025-06-06T00:00:00Z
+modDatetime: 2025-06-07T00:00:00Z
 title: First Post for the year 2025
 slug: first-post-for-the-year-2025
 featured: true
