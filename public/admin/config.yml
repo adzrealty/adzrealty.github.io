@@ -1,23 +1,25 @@
+# Site configuration  
 site_url: https://adz.ph
-# This is the backend configuration for GitHub
+
+# Backend configuration for GitHub
 backend:
   name: github
-  repo: adzrealty/adzrealty.github.io # Your repo name
-  branch: main # The branch to commit to
+  repo: adzrealty/adzrealty.github.io
+  branch: main
   site_domain: adz.ph
 
-# This is for media files (images)
-media_folder: "src/assets/images" # Where to upload images
-public_folder: "/src/assets/images" # How to link to them
+# Media configuration (matches your src/assets/images folder)
+media_folder: "src/assets/images"
+public_folder: "/src/assets/images"
 
-# This defines your content collections. You only have one: "blog"
+# Collections configuration (corrected to match src/data/blog)
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog Post" # Used in the UI
-    folder: "src/content/blog" # The path to the folder where blog posts are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
-    fields: # The fields for each document, which map to the frontmatter
+  - name: "blog"
+    label: "Blog Post"
+    folder: "src/data/blog"  # ✅ Fixed to match your actual directory
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
       - { label: "Title", name: "title", widget: "string" }
       - {
           label: "Publish Date",
