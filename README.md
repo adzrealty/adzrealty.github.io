@@ -1,4 +1,4 @@
-##+ ADZ.PH
+# ADZ.PH
 \
 Everything from A to Z. ADZ.ph Facebook page is dedicated to real estate properties in Cebu, Philippines. Signup, subscribe, share and engage our page to get more information, latest and exciting updates.
 \
