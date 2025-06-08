@@ -5,6 +5,7 @@ backend:
   name: github
   repo: adzrealty/adzrealty.github.io
   branch: main
+  base_url: https://sveltia-cms-auth.adzrealty.workers.dev
 
 # Media configuration (matches your src/assets/images folder)
 media_folder: "src/assets/images"
