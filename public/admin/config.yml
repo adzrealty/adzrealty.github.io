@@ -1,6 +1,6 @@
 # This is the backend configuration for GitHub
 backend:
-  name: github
+  name: git-gateway
   repo: adzrealty/adzrealty.github.io # Your repo name
   branch: main # The branch to commit to
 
