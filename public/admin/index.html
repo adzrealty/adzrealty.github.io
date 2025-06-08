@@ -3,12 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADZ Content Panel Manager</title>
+    <title>Content Manager</title>
+    <!-- Load the main Decap CMS script first -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <script>
-      CMS.init({ config });
-    </script>
+    <!--
+      The Decap CMS script will automatically find and use the config.yml file
+      in the same directory. We don't need to manually initialize it with a script tag
+      if the config file is named config.yml and is in the same folder.
+      
+      However, if that doesn't work, we can be more explicit.
+      Let's try the simplest approach first: just load the script and let it auto-discover.
+    -->
   </body>
 </html>
