@@ -1,8 +1,10 @@
+site_url: https://adz.ph
 # This is the backend configuration for GitHub
 backend:
   name: github
   repo: adzrealty/adzrealty.github.io # Your repo name
   branch: main # The branch to commit to
+  site_domain: adz.ph
 
 # This is for media files (images)
 media_folder: "src/assets/images" # Where to upload images
