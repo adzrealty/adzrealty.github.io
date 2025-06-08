@@ -1,14 +1,10 @@
 # Site configuration  
-site_url: https://adz.ph
 
 # Backend configuration for GitHub
 backend:
   name: github
   repo: adzrealty/adzrealty.github.io
   branch: main
-  site_domain: adz.ph
-  base_url: https://adz.ph
-  auth_endpoint: oauth
 
 # Media configuration (matches your src/assets/images folder)
 media_folder: "src/assets/images"
