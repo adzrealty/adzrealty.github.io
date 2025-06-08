@@ -4,13 +4,17 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import decapCmsOauth from "astro-decap-cms-oauth";  // ADD THIS LINE
 import { SITE } from "./src/config";
 
 export default defineConfig({
   site: 'https://adz.ph',
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: (page: string) => SITE.showArchives || !page.endsWith("/archives"),
+    }),
+    decapCmsOauth({  // ADD THIS INTEGRATION
+      decapCMSVersion: "3.3.3",
     }),
   ],
   markdown: {
@@ -26,12 +30,10 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
- // --- ADD THIS BLOCK BACK ---
   image: {
     service: {
       entrypoint: "astro/assets/services/sharp",
     },
     layout: "constrained",
   },
-  // --- END ADDITION ---
 });
