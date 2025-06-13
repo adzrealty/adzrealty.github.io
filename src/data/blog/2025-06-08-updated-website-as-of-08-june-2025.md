@@ -10,4 +10,4 @@ tags:
 ogImage: ''
 description: Just another log for latest changes on this site
 ---
-After tinkering with Github and working with Cloudflare, I finally able to make admin panel functional. I can post remotely, that is AFK, and when I'm on my machine, I can post locally do \`git push.\` FWIW, looks like igmi.
+After tinkering with Github and working with Cloudflare, I finally able to make admin panel functional. I can post remotely, that is AFK, and when I'm on my machine, I can post locally & do \`git push.\` FWIW, looks like igmi.
