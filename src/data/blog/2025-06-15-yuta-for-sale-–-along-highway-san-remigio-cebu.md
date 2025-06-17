@@ -16,9 +16,11 @@ description: |-
   💰 Affordable Payment Options:
   Option 1: Straight Monthly for 8 Years
 ---
-## ![🌴](https://static.xx.fbcdn.net/images/emoji.php/v9/t8b/2/16/1f334.png)YUTA FOR SALE – ALONG HIGHWAY, SAN REMIGIO, CEBU! ![🏡](https://static.xx.fbcdn.net/images/emoji.php/v9/t16/2/16/1f3e1.png)
+## YUTA FOR SALE – ALONG HIGHWAY, SAN REMIGIO, CEBU! 
 
-![San Remigio Hazel Ville](/src/assets/images/viber_image_2025-06-06_12-53-13-302.jpg "San Remigio Hazel Ville")![San Remigio Hazel Ville](/src/assets/images/viber_image_2025-06-06_12-53-14-465.jpg "San Remigio Hazel Ville")
+![](/src/assets/images/viber_image_2025-06-06_12-53-13-302.jpg)
+
+![](/src/assets/images/viber_image_2025-06-06_12-53-14-465.jpg)
 
 Gusto ka ba og yuta baligya duol sa beach, barato og installment sa San Remigio? Para ni nimo, bai!
 
