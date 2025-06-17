@@ -6,7 +6,9 @@ author: Aileen Ferrer
 featured: true
 draft: false
 tags:
-  - lot for sale, sanrem, san remegio lot for sale
+  - lot for sale 
+  - sanrem
+  - san remegio lot for sale
 ogImage: ''
 description: |-
   Gusto ka ba og yuta baligya duol sa beach, barato og installment sa San Remigio? Para ni nimo, bai!
