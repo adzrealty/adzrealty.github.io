@@ -42,7 +42,15 @@ const publishDate = "2025-06-17";
 export const prerender = true;
 ---
 
-<Layout title={title} description={description}>
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}      
+  tags={tags}              
+  category={category}      
+  author={author}          
+  publishDate={publishDate}
+>
   <!-- Additional Meta Tags in Head -->
   <Fragment slot="head">
     <!-- SEO Meta Tags -->
