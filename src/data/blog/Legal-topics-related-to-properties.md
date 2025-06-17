@@ -24,4 +24,5 @@ Below are articles, infographics, or legal tidbits that any person interested to
 Below are articles, infographics, or legal tidbits that any person interested to learn the law in relation to acquiring, buying, receiving property especially real estate.
 
 ➤ [ISRAI Framework](/ISRAI-framework)
+
 ➤ [INFOGRAPHIC: Wills and Succession](/wills-and-succession-infographic)
