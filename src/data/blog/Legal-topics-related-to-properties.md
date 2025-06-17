@@ -1,5 +1,5 @@
 ---
-title: YUTA FOR SALE – ALONG HIGHWAY, SAN REMIGIO, CEBU!
+title: Legal Bai! - Topics related to Real Estate
 pubDatetime: 2025-06-17T18:54:00+08:00
 modDatetime: 2025-06-17T18:54:00+08:00
 author: Clifford Enoc
