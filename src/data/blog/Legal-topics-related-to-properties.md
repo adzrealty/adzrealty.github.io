@@ -20,5 +20,9 @@ description: Legal information related to real estate that you should know
 ## Legal Education
 Below are articles, infographics, or legal tidbits that any person interested to learn the law in relation to acquiring, buying, receiving property especially real estate.
 
-- [ISRAI Framework](/ISRAI-framework)
-- [INFOGRAPHIC: Wills and Succession](/wills-and-succession-infographic)
+<ArrowList 
+  items={[
+    { text: "ISRAI Framework", url: "/ISRAI-framework" },
+    { text: "INFOGRAPHIC: Wills and Succession", url: "/wills-and-succession-infographic" }
+  ]} 
+/>
