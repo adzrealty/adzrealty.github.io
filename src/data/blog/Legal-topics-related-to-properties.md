@@ -8,8 +8,7 @@ draft: false
 tags:
   - Philippine Law, Succession Law, Legal Education,ISRAI, Civil Code, Inheritance, Legal Framework
 ogImage: ''
-description: |-
-Legal information related to real estate that you should know
+description: Legal information related to real estate that you should know
 ---
 
 ## Legal Education
