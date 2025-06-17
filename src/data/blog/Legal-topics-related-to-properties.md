@@ -23,3 +23,5 @@ Below are articles, infographics, or legal tidbits that any person interested to
 ➤ [ISRAI Framework](/ISRAI-framework)
 
 ➤ [INFOGRAPHIC: Wills and Succession](/wills-and-succession-infographic)
+
+More info, visit: https://cliffordx.github.io/legalbai
