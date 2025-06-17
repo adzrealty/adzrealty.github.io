@@ -1,0 +1,496 @@
+---
+import "@pagefind/default-ui/css/ui.css";
+import Main from "@/layouts/Main.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+
+const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
+
+// Page-specific data
+const title = "The ISRAI Framework: Philippine Succession Law Hierarchy";
+const description = "A comprehensive visual guide to the ISRAI Framework - the systematic approach to resolving vacant shares in inheritance under Philippine succession law.";
+
+// SEO and Content Tags
+const keywords = [
+  "ISRAI Framework", 
+  "Philippine Succession Law", 
+  "Inheritance Law Philippines", 
+  "Wills and Succession", 
+  "Legal Framework", 
+  "Civil Code Philippines",
+  "Testamentary Succession",
+  "Intestate Succession",
+  "Legal Hierarchy"
+];
+
+const tags = [
+  "Philippine Law",
+  "Succession Law", 
+  "Legal Education",
+  "ISRAI",
+  "Civil Code",
+  "Inheritance",
+  "Legal Framework"
+];
+
+const category = "Legal Education";
+const author = "Clifford Enoc";
+const publishDate = "2025-06-17";
+
+export const prerender = true;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <Main>
+    <!-- External CDN Links -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+      <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">
+          The <span class="text-accent">ISRAI Framework</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-6">
+          Philippine Succession Law Hierarchy
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
+          {description}
+        </p>
+      </header>
+
+      <main class="space-y-16">
+        <section id="israi-overview">
+          <h2 class="text-3xl font-bold text-center mb-2">What is ISRAI?</h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            ISRAI is a systematic framework that ensures orderly property transfer by progressing from the most specific expression of the testator's will to the most general application of law, guaranteeing that no portion of an estate remains without a rightful heir.
+          </p>
+          
+          <div class="card max-w-4xl mx-auto">
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold mb-4">The ISRAI Hierarchy</h3>
+              <p class="text-gray-600">Each step represents a priority level, with higher priorities taking precedence over lower ones</p>
+            </div>
+            
+            <div class="space-y-4">
+              <div class="flex items-center p-4 bg-blue-600 text-white rounded-lg">
+                <div class="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">I</div>
+                <div class="flex-grow">
+                  <h4 class="font-bold text-lg">Institution of Heir</h4>
+                  <p class="text-blue-100">Priority 1 - Testator's primary designation</p>
+                </div>
+                <div class="text-blue-200 text-sm">Highest Priority</div>
+              </div>
+              
+              <div class="text-center text-2xl text-gray-400">↓</div>
+              
+              <div class="flex items-center p-4 bg-teal-600 text-white rounded-lg">
+                <div class="w-12 h-12 bg-white text-teal-600 rounded-full flex items-center justify-center font-bold text-xl mr-4">S</div>
+                <div class="flex-grow">
+                  <h4 class="font-bold text-lg">Substitution</h4>
+                  <p class="text-teal-100">Priority 2 - Testator's backup plan</p>
+                </div>
+              </div>
+              
+              <div class="text-center text-2xl text-gray-400">↓</div>
+              
+              <div class="flex items-center p-4 bg-blue-500 text-white rounded-lg">
+                <div class="w-12 h-12 bg-white text-blue-500 rounded-full flex items-center justify-center font-bold text-xl mr-4">R</div>
+                <div class="flex-grow">
+                  <h4 class="font-bold text-lg">Representation</h4>
+                  <p class="text-blue-100">Priority 3 - Descendants step into ancestor's place</p>
+                </div>
+              </div>
+              
+              <div class="text-center text-2xl text-gray-400">↓</div>
+              
+              <div class="flex items-center p-4 bg-blue-400 text-white rounded-lg">
+                <div class="w-12 h-12 bg-white text-blue-400 rounded-full flex items-center justify-center font-bold text-xl mr-4">A</div>
+                <div class="flex-grow">
+                  <h4 class="font-bold text-lg">Accretion</h4>
+                  <p class="text-blue-100">Priority 4 - Co-heirs absorb vacant shares</p>
+                </div>
+              </div>
+              
+              <div class="text-center text-2xl text-gray-400">↓</div>
+              
+              <div class="flex items-center p-4 bg-gray-500 text-white rounded-lg">
+                <div class="w-12 h-12 bg-white text-gray-500 rounded-full flex items-center justify-center font-bold text-xl mr-4">I</div>
+                <div class="flex-grow">
+                  <h4 class="font-bold text-lg">Intestacy</h4>
+                  <p class="text-gray-100">Priority 5 - Legal default distribution</p>
+                </div>
+                <div class="text-gray-300 text-sm">Last Resort</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="step-by-step">
+          <h2 class="text-3xl font-bold text-center mb-12">Step-by-Step Breakdown</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Institution -->
+            <div class="card">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-3">I</div>
+                <h3 class="text-xl font-bold">Institution of Heir</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                The testator's primary designation of heirs, legacies, and devises. This reflects the fundamental principle that a validly expressed will constitutes the supreme law of succession.
+              </p>
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-blue-800 mb-2">Requirements:</h4>
+                <ul class="text-sm text-blue-700 space-y-1">
+                  <li>• Valid and properly probated will</li>
+                  <li>• Heir must be alive at testator's death</li>
+                  <li>• Heir must have legal capacity</li>
+                  <li>• Heir must accept the inheritance</li>
+                  <li>• Cannot violate legitime protections</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Substitution -->
+            <div class="card">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold mr-3">S</div>
+                <h3 class="text-xl font-bold">Substitution</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                The testator's backup plan when primary institution fails. Allows testators to anticipate problems and designate alternatives in advance.
+              </p>
+              <div class="bg-teal-50 p-4 rounded-lg">
+                <h4 class="font-bold text-teal-800 mb-2">Four Types:</h4>
+                <ul class="text-sm text-teal-700 space-y-1">
+                  <li>• <strong>Simple:</strong> Basic substitute designation</li>
+                  <li>• <strong>Brief:</strong> Complex multiple arrangements</li>
+                  <li>• <strong>Reciprocal:</strong> Mutual substitution</li>
+                  <li>• <strong>Fideicommissary:</strong> Successive inheritance (limited)</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Representation -->
+            <div class="card">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold mr-3">R</div>
+                <h3 class="text-xl font-bold">Representation</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                A legal fiction allowing descendants to step into their ancestor's place and inherit shares that would have gone to the represented person.
+              </p>
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-blue-800 mb-2">Key Rules:</h4>
+                <ul class="text-sm text-blue-700 space-y-1">
+                  <li>• <strong>Direct line:</strong> Unlimited degrees</li>
+                  <li>• <strong>Collateral:</strong> Limited to nephews/nieces only</li>
+                  <li>• Available for predecease, incapacity, disinheritance</li>
+                  <li>• <strong>NOT</strong> available for repudiation</li>
+                  <li>• Distribution follows per stirpes method</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Accretion -->
+            <div class="card">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center font-bold mr-3">A</div>
+                <h3 class="text-xl font-bold">Accretion</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Mechanism for co-heirs to absorb vacant shares when representation is not available. Reflects presumed testator intent to keep property within designated group.
+              </p>
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-blue-800 mb-2">Requirements:</h4>
+                <ul class="text-sm text-blue-700 space-y-1">
+                  <li>• Plurality of heirs (two or more)</li>
+                  <li>• Joint/collective institution (pro indiviso)</li>
+                  <li>• No specific individual portions designated</li>
+                  <li>• Available even for repudiation cases</li>
+                  <li>• Proportional distribution among remaining heirs</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Intestacy -->
+            <div class="card lg:col-span-2">
+              <div class="flex items-center mb-4">
+                <div class="w-10 h-10 bg-gray-500 text-white rounded-full flex items-center justify-center font-bold mr-3">I</div>
+                <h3 class="text-xl font-bold">Intestacy</h3>
+              </div>
+              <p class="text-gray-600 mb-4">
+                The ultimate safety net ensuring no portion of an estate remains without an heir. When all testamentary mechanisms fail, law provides distribution based on family proximity.
+              </p>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3">Intestate Succession Hierarchy:</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                  <div class="text-center">
+                    <div class="font-bold text-gray-700">Primary Heirs</div>
+                    <div class="text-gray-600">Legitimate children & descendants + surviving spouse</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="font-bold text-gray-700">Secondary Heirs</div>
+                    <div class="text-gray-600">Parents & ascendants + surviving spouse</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="font-bold text-gray-700">Other Heirs</div>
+                    <div class="text-gray-600">Illegitimate children, collateral relatives, State</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="decision-tree">
+          <h2 class="text-3xl font-bold text-center mb-12">ISRAI Decision Tree</h2>
+          <div class="card max-w-4xl mx-auto">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold mb-2">How to Apply ISRAI in Practice</h3>
+              <p class="text-gray-600">Follow this decision tree to systematically resolve inheritance issues</p>
+            </div>
+            
+            <div class="space-y-6">
+              <!-- Start -->
+              <div class="text-center">
+                <div class="inline-block p-4 bg-gray-100 rounded-lg border-2 border-dashed border-gray-400">
+                  <strong>START: Vacant Share Identified</strong>
+                </div>
+              </div>
+              
+              <div class="text-center text-2xl text-gray-400">↓</div>
+              
+              <!-- Question 1 -->
+              <div class="flex flex-col items-center">
+                <div class="p-4 bg-yellow-100 rounded-lg border border-yellow-400 text-center mb-4">
+                  <strong>Is there a valid will that institutes an heir for this share?</strong>
+                </div>
+                <div class="flex space-x-8">
+                  <div class="text-center">
+                    <div class="text-green-600 font-bold mb-2">YES</div>
+                    <div class="text-center text-2xl text-green-500">↓</div>
+                    <div class="p-3 bg-blue-600 text-white rounded-lg">
+                      <strong>I - INSTITUTION</strong><br>
+                      <small>Check requirements</small>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-red-600 font-bold mb-2">NO</div>
+                    <div class="text-center text-2xl text-red-500">↓</div>
+                    <div class="p-3 bg-gray-500 text-white rounded-lg">
+                      <strong>I - INTESTACY</strong><br>
+                      <small>Apply intestate rules</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="text-center text-2xl text-gray-400">↓</div>
+              
+              <!-- If Institution Fails -->
+              <div class="text-center">
+                <div class="p-4 bg-yellow-100 rounded-lg border border-yellow-400">
+                  <strong>If Institution fails...</strong>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                <div class="p-3 bg-teal-600 text-white rounded-lg">
+                  <strong>S</strong><br>
+                  Substitution<br>
+                  <small>Check if testator provided substitutes</small>
+                </div>
+                <div class="p-3 bg-blue-500 text-white rounded-lg">
+                  <strong>R</strong><br>
+                  Representation<br>
+                  <small>Check if descendants can represent</small>
+                </div>
+                <div class="p-3 bg-blue-400 text-white rounded-lg">
+                  <strong>A</strong><br>
+                  Accretion<br>
+                  <small>Check if co-heirs exist</small>
+                </div>
+                <div class="p-3 bg-gray-500 text-white rounded-lg">
+                  <strong>I</strong><br>
+                  Intestacy<br>
+                  <small>Apply legal distribution</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="practical-examples">
+          <h2 class="text-3xl font-bold text-center mb-12">Practical Examples</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Example 1 -->
+            <div class="card">
+              <div class="bg-blue-600 text-white p-4 rounded-t-lg -m-6 mb-4">
+                <h3 class="font-bold">Scenario 1: Institution Works</h3>
+              </div>
+              <div class="space-y-3">
+                <div class="text-sm"><strong>Situation:</strong> Juan institutes his son Pedro as heir to his house</div>
+                <div class="text-sm"><strong>Analysis:</strong> Pedro is alive, capacitated, and accepts</div>
+                <div class="p-3 bg-green-50 rounded-lg">
+                  <div class="text-green-800 font-bold">✓ RESULT: Institution succeeds</div>
+                  <div class="text-green-700 text-sm">Pedro inherits the house. Process stops at "I".</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example 2 -->
+            <div class="card">
+              <div class="bg-teal-600 text-white p-4 rounded-t-lg -m-6 mb-4">
+                <h3 class="font-bold">Scenario 2: Substitution Applied</h3>
+              </div>
+              <div class="space-y-3">
+                <div class="text-sm"><strong>Situation:</strong> Juan institutes Pedro, but Pedro predeceases. Juan's will says "if Pedro dies, then Maria"</div>
+                <div class="text-sm"><strong>Analysis:</strong> Institution fails, but substitution is available</div>
+                <div class="p-3 bg-orange-50 rounded-lg">
+                  <div class="text-orange-800 font-bold">S - RESULT: Substitution works</div>
+                  <div class="text-orange-700 text-sm">Maria inherits as substitute heir.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example 3 -->
+            <div class="card">
+              <div class="bg-blue-500 text-white p-4 rounded-t-lg -m-6 mb-4">
+                <h3 class="font-bold">Scenario 3: Representation</h3>
+              </div>
+              <div class="space-y-3">
+                <div class="text-sm"><strong>Situation:</strong> Juan institutes Pedro, Pedro predeceases leaving children, no substitution provided</div>
+                <div class="text-sm"><strong>Analysis:</strong> Institution fails, no substitution, but Pedro's children can represent</div>
+                <div class="p-3 bg-blue-50 rounded-lg">
+                  <div class="text-blue-800 font-bold">R - RESULT: Representation applies</div>
+                  <div class="text-blue-700 text-sm">Pedro's children inherit by representation.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="integration-compulsory">
+          <h2 class="text-3xl font-bold text-center mb-12">Integration with Compulsory Succession</h2>
+          <div class="card max-w-4xl mx-auto">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold">ISRAI operates within the constraint of compulsory succession</h3>
+              <p class="text-gray-600">The legitime system protects certain family members against complete disinheritance</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-bold text-lg mb-4 text-center">Estate Division</h4>
+                <div class="chart-container h-64">
+                  <canvas id="estateChart"></canvas>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="font-bold text-lg mb-4">Compulsory Heirs Categories</h4>
+                <div class="space-y-3">
+                  <div class="p-3 bg-red-50 border-l-4 border-red-500">
+                    <div class="font-bold text-red-800">Primary Compulsory Heirs</div>
+                    <div class="text-red-700 text-sm">Legitimate children & descendants (1/2 of estate)</div>
+                  </div>
+                  <div class="p-3 bg-yellow-50 border-l-4 border-yellow-500">
+                    <div class="font-bold text-yellow-800">Secondary Compulsory Heirs</div>
+                    <div class="text-yellow-700 text-sm">Parents & ascendants (1/2 if no descendants)</div>
+                  </div>
+                  <div class="p-3 bg-green-50 border-l-4 border-green-500">
+                    <div class="font-bold text-green-800">Concurring Compulsory Heirs</div>
+                    <div class="text-green-700 text-sm">Surviving spouse & illegitimate children</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+              <h4 class="font-bold text-blue-800 mb-2">Key Constraint:</h4>
+              <p class="text-blue-700">
+                The Institution step of ISRAI cannot be used to completely disinherit compulsory heirs or reduce their shares below the legally mandated minimum. This ensures family protection remains paramount.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="text-center mt-16 pt-8 border-t border-gray-200">
+        <p class="text-gray-500">
+          Disclaimer: This infographic is for educational purposes and is based on the Philippine Civil Code. The ISRAI framework reflects civil law principles unique to the Philippines. Consult with a lawyer for specific situations.
+        </p>
+      </footer>
+    </div>
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F8F9FA;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 250px;
+      }
+      .card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+      .text-accent { color: #FF6B6B; }
+      .bg-accent { background-color: #FF6B6B; }
+      .border-accent { border-color: #FF6B6B; }
+    </style>
+
+    <script>
+      const chartColors = {
+        red: '#FF6B6B',
+        yellow: '#FFD93D',
+        green: '#6BCB77',
+        blue: '#4D96FF',
+        gray: '#E5E7EB'
+      };
+
+      // Estate Division Chart
+      const estateCtx = document.getElementById('estateChart').getContext('2d');
+      new Chart(estateCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Legitime (Reserved by Law)', 'Free Portion (ISRAI Applies)'],
+          datasets: [{
+            data: [50, 50],
+            backgroundColor: [chartColors.red, chartColors.blue],
+            hoverOffset: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+            }
+          }
+        }
+      });
+    </script>
+  </Main>
+  <Footer />
+</Layout>

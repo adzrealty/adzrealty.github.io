@@ -8,10 +8,36 @@ import { SITE } from "@/config";
 
 const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
 
-// Page-specific data
+// Page-specific data (src/pages/wills-and-succession-infographic)
 const title = "A Visual Guide to Philippine Wills & Succession";
 const description = "Navigating the legal landscape of inheritance can be complex. This guide breaks down the core principles of the Philippine Civil Code on succession into clear, understandable visuals.";
 
+// SEO and Content Tags
+const keywords = [
+  "ISRAI Framework", 
+  "Philippine Succession Law", 
+  "Inheritance Law Philippines", 
+  "Wills and Succession", 
+  "Legal Framework", 
+  "Civil Code Philippines",
+  "Testamentary Succession",
+  "Intestate Succession",
+  "Legal Hierarchy"
+];
+
+const tags = [
+  "Philippine Law",
+  "Succession Law", 
+  "Legal Education",
+  "ISRAI",
+  "Civil Code",
+  "Inheritance",
+  "Legal Framework"
+];
+
+const category = "Legal Education";
+const author = "Clifford Enoc";
+const publishDate = "2025-06-17";
 export const prerender = true;
 ---
 
