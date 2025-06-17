@@ -323,6 +323,25 @@ export const prerender = true;
             </div>
           </div>
         </section>
+        <!-- Optional: Display tags visually on the page -->
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+      
+      <!-- Tags Display Section (Optional) -->
+      <div class="text-center mb-8">
+        <div class="flex flex-wrap justify-center gap-2 mb-4">
+          <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+            {category}
+          </span>
+          {tags.map(tag => (
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+              #{tag.replace(/\s+/g, '')}
+            </span>
+          ))}
+        </div>
+        <div class="text-sm text-gray-500">
+          Published: {publishDate} | By: {author}
+        </div>
+      </div>
       </main>
 
       <footer class="text-center mt-16 pt-8 border-t border-gray-200">
