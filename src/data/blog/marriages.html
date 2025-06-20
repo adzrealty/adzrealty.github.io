@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Legal Architecture of Marriage in the Philippines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Narrative & Structure Plan:
+    1. Introduction: Hook with a big stat (new marriage age).
+    2. The Path to "I Do": A flowchart on marriage requisites.
+    3. The Marital Bank Account: Comparing property regimes (ACP, CPG, CSP).
+    4. A Union of Equals: Visualizing spousal rights and obligations.
+    5. When the Vow Breaks: Comparing legal remedies (Legal Separation, Annulment, Nullity).
+    6. The Divorce Question: Explaining the exceptions for Muslims and mixed marriages.
+    7. Forbidden Unions: Detailing prohibited marriages and the path to remarriage.
+
+    Visualization Selection Plan:
+    - Marriage Age Change -> Goal: Inform -> Big Number (HTML/CSS) -> Justification: High impact for a key change. NO SVG.
+    - Marriage Requisites -> Goal: Organize -> Flow Chart (HTML/CSS) -> Justification: Clearly shows the process and consequences. NO SVG/Mermaid.
+    - Property Regimes -> Goal: Compare -> Donut Charts & Cards (Chart.js & HTML/CSS) -> Justification: Donuts for high-level concept, cards for detailed comparison. Chart.js/Canvas used.
+    - Legal Remedies -> Goal: Compare -> Bar Chart (Chart.js) -> Justification: Excellent for comparing features across multiple categories. Chart.js/Canvas used.
+    - Grounds for Annulment -> Goal: Organize -> Bar Chart (Chart.js) -> Justification: Visually engaging way to list multiple grounds. Chart.js/Canvas used.
+    - Divorce Recognition -> Goal: Organize -> Flow Chart (HTML/CSS) -> Justification: Simplifies a complex legal process. NO SVG/Mermaid.
+
+    Color Palette: Brilliant Blues (#003f5c, #374c80, #7a5195, #bc5090, #ef5675, #ff764a, #ffa600)
+
+    Constraint Confirmation: NEITHER Mermaid JS NOR SVG were used in this output. All visuals are implemented with Chart.js/Canvas or structured HTML/CSS with Tailwind.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flow-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            min-height: 80px;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #7a5195;
+            margin: 0 0.5rem;
+            align-self: center;
+        }
+        .flow-connector {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #7a5195;
+            margin: 0 1rem;
+        }
+        .kpi {
+            background-color: #003f5c;
+            color: white;
+        }
+        .kpi-value {
+            font-weight: 900;
+            font-size: 4rem;
+            line-height: 1;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: #d1d5db;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#7a5195] to-[#ff764a]">The Law of Marriage in the Philippines</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">An infographic journey through the Family Code, from the solemn vow of "I do" to the legal pathways of separation.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="foundation">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">1. The Foundation of Marriage</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl mb-2 text-[#374c80]">A "Special Contract" Protected by the State</h3>
+                        <p class="text-gray-700">The 1987 Constitution declares marriage an "inviolable social institution." The Family Code of 1987 modernized this, defining it as a permanent union between a man and a woman. It's not just a contract; its terms are governed by law, not by the parties, reflecting the state's profound interest in protecting the family.</p>
+                    </div>
+                    <div class="kpi rounded-lg shadow-lg p-8 text-center">
+                        <div class="kpi-value">18</div>
+                        <div class="kpi-label">The uniform minimum age for marriage under the Family Code, a significant increase from the Civil Code's 14 for females and 16 for males.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="path-to-marriage">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">2. The Path to "I Do": Marriage Requisites</h2>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                     <p class="text-center text-gray-600 mb-6">The Family Code creates a strict, two-tiered system for a valid marriage. Failing to meet these requirements has very different legal consequences.</p>
+                     <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="flow-step bg-[#003f5c] text-white w-full md:w-1/4">1. Essential Requisites</div>
+                        <div class="flow-arrow transform md:rotate-0 rotate-90">&rarr;</div>
+                        <div class="text-left p-4 bg-gray-100 rounded-lg flex-1">
+                            <p><span class="font-bold text-[#374c80]">A) Legal Capacity:</span> A man and a woman, both at least 18 years old.</p>
+                            <p><span class="font-bold text-[#374c80]">B) Free Consent:</span> Given in the presence of the solemnizing officer.</p>
+                            <p class="mt-2 text-red-600 font-semibold">Result if Absent: Marriage is VOID from the start.</p>
+                        </div>
+                     </div>
+                     <div class="flex justify-center my-4"><div class="flow-arrow transform rotate-90">&darr;</div></div>
+                      <div class="flex flex-col md:flex-row items-center justify-center">
+                        <div class="flow-step bg-[#374c80] text-white w-full md:w-1/4">2. Formal Requisites</div>
+                        <div class="flow-arrow transform md:rotate-0 rotate-90">&rarr;</div>
+                        <div class="text-left p-4 bg-gray-100 rounded-lg flex-1">
+                            <p><span class="font-bold text-[#7a5195]">A) Authority of Solemnizing Officer.</span></p>
+                            <p><span class="font-bold text-[#7a5195]">B) Valid Marriage License.</span></p>
+                            <p><span class="font-bold text-[#7a5195]">C) Marriage Ceremony</span> with two witnesses.</p>
+                             <p class="mt-2 text-red-600 font-semibold">Result if Absent: Marriage is VOID (with some exceptions).</p>
+                             <p class="mt-2 text-orange-600 font-semibold">Result if only an Irregularity: Marriage is VALID, but parties may be liable.</p>
+                        </div>
+                     </div>
+                </div>
+            </section>
+
+            <section id="property-regimes">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">3. The Marital Bank Account: Property Regimes</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">The Family Code fundamentally changed the default financial relationship between spouses. Unless you sign a pre-nuptial agreement, your property regime is determined by your marriage date.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#bc5090]">Default for Marriages ON or AFTER Aug 3, 1988</h3>
+                        <div class="chart-container"><canvas id="acpChart"></canvas></div>
+                        <p class="mt-4 text-center text-gray-700">The default is **Absolute Community of Property (ACP)**. Think of it as a total merger. Almost everything you both owned before and acquire during the marriage becomes one common fund.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#ef5675]">Default for Marriages BEFORE Aug 3, 1988</h3>
+                        <div class="chart-container"><canvas id="cpgChart"></canvas></div>
+                        <p class="mt-4 text-center text-gray-700">The default was **Conjugal Partnership of Gains (CPG)**. This is a partnership model. You each keep your own pre-marital property, and only the "gains" or profits earned during the marriage are shared.</p>
+                    </div>
+                </div>
+                 <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-[#003f5c]">Regime Comparison at a Glance</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-lg text-[#374c80]">Absolute Community (ACP)</h4>
+                            <p class="text-sm mt-2">All pre-marital & acquired assets are pooled.</p>
+                            <p class="text-sm font-semibold mt-2 text-[#003f5c]">Division: Entire net community divided 50/50.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-lg text-[#7a5195]">Conjugal Partnership (CPG)</h4>
+                            <p class="text-sm mt-2">Only fruits and income are pooled.</p>
+                             <p class="text-sm font-semibold mt-2 text-[#003f5c]">Division: Only net gains divided 50/50.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <h4 class="font-bold text-lg text-[#bc5090]">Separation of Property</h4>
+                            <p class="text-sm mt-2">No common fund. By agreement only.</p>
+                            <p class="text-sm font-semibold mt-2 text-[#003f5c]">Division: Each spouse keeps their own property.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="spousal-obligations">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">4. A Union of Equals: Rights & Obligations</h2>
+                 <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">The Family Code promotes a partnership of equals, replacing old patriarchal rules with joint responsibilities.</p>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                         <div class="text-6xl mb-4">🤝</div>
+                         <h3 class="font-bold text-xl text-[#374c80]">Live Together</h3>
+                         <p class="text-gray-700 mt-2">The duty of cohabitation, forming a life together.</p>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                         <div class="text-6xl mb-4">❤️</div>
+                         <h3 class="font-bold text-xl text-[#7a5195]">Mutual Love, Respect & Fidelity</h3>
+                         <p class="text-gray-700 mt-2">The moral and emotional core, with legal consequences for infidelity.</p>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                         <div class="text-6xl mb-4">🫂</div>
+                         <h3 class="font-bold text-xl text-[#bc5090]">Mutual Help & Support</h3>
+                         <p class="text-gray-700 mt-2">The duty of financial, emotional, and moral support.</p>
+                     </div>
+                 </div>
+                 <div class="mt-8 text-center bg-white rounded-lg shadow-md p-6">
+                    <h3 class="font-bold text-xl text-[#003f5c]">Both spouses <span class="text-[#ff764a]">JOINTLY</span> decide on the family home, manage the household, and are responsible for family support.</h3>
+                 </div>
+            </section>
+
+
+            <section id="legal-remedies">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">5. When the Vow Breaks: Legal Remedies</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">For irreparable marriages, Philippine law provides three distinct, non-divorce remedies. Understanding the difference is critical.</p>
+                <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                    <h3 class="font-bold text-xl text-center mb-4 text-[#374c80]">Comparing Marital Remedies</h3>
+                    <div class="chart-container h-[500px] md:h-[450px]"><canvas id="remediesChart"></canvas></div>
+                    <p class="text-center mt-4 text-sm text-gray-600">This chart highlights the fundamental differences in outcome for each legal path. Only annulment and a declaration of nullity sever the marriage bond and allow for remarriage.</p>
+                </div>
+                 <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#7a5195]">Grounds for Annulment (Voidable Marriage)</h3>
+                        <p class="text-center text-sm text-gray-600 mb-4">These grounds must exist at the time of the marriage.</p>
+                        <div class="chart-container h-[400px]"><canvas id="annulmentGroundsChart"></canvas></div>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-center mb-4 text-[#bc5090]">Grounds for Nullity (Void Marriage)</h3>
+                        <p class="text-center text-sm text-gray-600 mb-4">These marriages were invalid from the very beginning.</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                           <li>Under 18 years of age</li>
+                           <li>Bigamous or polygamous marriages</li>
+                           <li>Incestuous relationships</li>
+                           <li>Marriages against public policy (e.g., first cousins)</li>
+                           <li>No valid marriage license</li>
+                           <li>Solemnized by person without authority</li>
+                           <li class="font-bold text-[#ef5675]">Psychological Incapacity (Art. 36): A party's inability to comprehend and assume essential marital obligations. Must be grave, pre-existing, and incurable.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="divorce">
+                 <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">6. The Complex Question of Divorce</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">The Philippines does not have a general divorce law. However, there are two significant, legally recognized exceptions.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-[#374c80] mb-4">Exception 1: Divorce for Muslim Filipinos</h3>
+                        <p class="text-gray-700">Under <span class="font-bold">Presidential Decree 1083</span> (Code of Muslim Personal Laws), Muslim Filipinos can obtain a divorce through Shari'a Courts. This recognizes their unique religious and cultural practices.</p>
+                        <ul class="list-disc list-inside space-y-1 mt-4 text-sm">
+                            <li>Applies to marriages between two Muslims.</li>
+                            <li>Recognizes various types like Talaq (by husband) and Khul' (by wife).</li>
+                            <li>Divorce must be registered to be civilly recognized.</li>
+                        </ul>
+                     </div>
+                     <div class="bg-white rounded-lg shadow-md p-6">
+                         <h3 class="font-bold text-xl text-[#7a5195] mb-4">Exception 2: Recognition of Foreign Divorce</h3>
+                         <p class="text-gray-700">Under <span class="font-bold">Article 26(2) of the Family Code</span>, a Filipino married to a foreigner can have a foreign divorce recognized in the Philippines, allowing the Filipino spouse to remarry.</p>
+                         <p class="font-bold mt-4 text-sm text-[#bc5090]">The Process:</p>
+                        <div class="mt-2 space-y-2">
+                             <div class="flow-step bg-gray-100 text-sm">1. Foreign divorce is obtained abroad (by either spouse).</div>
+                             <div class="flow-arrow text-center text-2xl">&darr;</div>
+                             <div class="flow-step bg-gray-100 text-sm">2. Filipino spouse files a Petition for Judicial Recognition in a Philippine court.</div>
+                             <div class="flow-arrow text-center text-2xl">&darr;</div>
+                             <div class="flow-step bg-gray-100 text-sm">3. Petitioner must prove both the foreign divorce decree AND the foreign spouse's national law on divorce.</div>
+                             <div class="flow-arrow text-center text-2xl">&darr;</div>
+                             <div class="flow-step bg-green-100 text-green-800 text-sm">4. If successful, the Filipino spouse is free to remarry.</div>
+                         </div>
+                     </div>
+                </div>
+            </section>
+            
+            <section id="subsequent-marriage">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">7. Prohibitions and Pathways to Remarriage</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">The law strictly forbids certain unions and criminalizes bigamy, requiring a final court order before one can remarry.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-[#ff764a] mb-4">Absolutely Prohibited Marriages</h3>
+                        <p class="font-semibold text-[#bc5090]">Incestuous (Void):</p>
+                        <ul class="list-disc list-inside text-sm mb-4">
+                            <li>Between ascendants and descendants (e.g., parent-child).</li>
+                            <li>Between brothers and sisters.</li>
+                        </ul>
+                        <p class="font-semibold text-[#ef5675]">Against Public Policy (Void):</p>
+                        <ul class="list-disc list-inside text-sm">
+                            <li>First cousins.</li>
+                            <li>Step-parent and step-child.</li>
+                            <li>Parent-in-law and child-in-law.</li>
+                            <li>Adopter and adopted child.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="font-bold text-xl text-[#ffa600] mb-4">The Danger of Bigamy</h3>
+                        <p class="text-gray-700">Contracting a second marriage while a prior one is still valid is the crime of bigamy. A person cannot simply assume their first marriage is void. <span class="font-bold">Article 40 of the Family Code requires a FINAL JUDICIAL DECREE</span> of nullity before remarrying. Without this court order, a second marriage leads to criminal liability.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-sm text-gray-500">This infographic provides a general overview of Philippine marriage law for informational purposes only and does not constitute legal advice. All data is based on the Family Code of the Philippines and related jurisprudence.</p>
+        </footer>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const wrapLabel = (label) => {
+        const maxLength = 16;
+        if (typeof label !== 'string' || label.length <= maxLength) {
+            return label;
+        }
+        const words = label.split(' ');
+        const lines = [];
+        let currentLine = '';
+        for (const word of words) {
+            if ((currentLine + ' ' + word).length > maxLength) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine += (currentLine ? ' ' : '') + word;
+            }
+        }
+        lines.push(currentLine);
+        return lines;
+    };
+
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        return Array.isArray(label) ? label.join(' ') : label;
+    };
+    
+    const brilliantBlues = {
+        darkBlue: '#003f5c',
+        midBlue: '#374c80',
+        purple: '#7a5195',
+        magenta: '#bc5090',
+        pink: '#ef5675',
+        orange: '#ff764a',
+        yellow: '#ffa600',
+    };
+
+    const acpChartCtx = document.getElementById('acpChart').getContext('2d');
+    new Chart(acpChartCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Community Property', 'Exclusive Property (e.g., Inheritance)'],
+            datasets: [{
+                label: 'ACP Composition',
+                data: [90, 10],
+                backgroundColor: [brilliantBlues.midBlue, brilliantBlues.pink],
+                borderColor: '#fff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' },
+                title: { display: true, text: 'Absolute Community of Property (ACP)' },
+                tooltip: { callbacks: { title: tooltipTitleCallback } }
+            }
+        }
+    });
+
+    const cpgChartCtx = document.getElementById('cpgChart').getContext('2d');
+    new Chart(cpgChartCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Spouse 1 Separate Property', 'Spouse 2 Separate Property', 'Conjugal Gains'],
+            datasets: [{
+                label: 'CPG Composition',
+                data: [40, 40, 20],
+                backgroundColor: [brilliantBlues.magenta, brilliantBlues.orange, brilliantBlues.yellow],
+                borderColor: '#fff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' },
+                title: { display: true, text: 'Conjugal Partnership of Gains (CPG)' },
+                tooltip: { callbacks: { title: tooltipTitleCallback } }
+            }
+        }
+    });
+
+    const remediesChartCtx = document.getElementById('remediesChart').getContext('2d');
+    new Chart(remediesChartCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Legal Separation', 'Annulment', 'Declaration of Nullity'],
+            datasets: [
+                {
+                    label: 'Marriage Bond Severed?',
+                    data: [0, 1, 1],
+                    backgroundColor: brilliantBlues.purple,
+                },
+                {
+                    label: 'Can Remarry?',
+                    data: [0, 1, 1],
+                    backgroundColor: brilliantBlues.pink,
+                },
+                 {
+                    label: 'Children Legitimate?',
+                    data: [1, 1, 0.5], 
+                    backgroundColor: brilliantBlues.orange,
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            indexAxis: 'y',
+            scales: {
+                x: {
+                    ticks: {
+                        callback: function(value) {
+                            if (value === 1) return 'Yes';
+                            if (value === 0) return 'No';
+                            if (value === 0.5) return 'Depends';
+                            return '';
+                        }
+                    },
+                     max: 1.1,
+                     min: -0.1
+                },
+                y: {
+                   ticks: {
+                     autoSkip: false
+                   }
+                }
+            },
+            plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Effect on Marriage Status' },
+                tooltip: { 
+                    callbacks: { 
+                        title: tooltipTitleCallback,
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            const value = context.raw;
+                            if (value === 1) label += 'Yes';
+                            else if (value === 0) label += 'No';
+                            else if (value === 0.5) label += 'Generally No (with exceptions)';
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+    
+    const annulmentGroundsChartCtx = document.getElementById('annulmentGroundsChart').getContext('2d');
+    new Chart(annulmentGroundsChartCtx, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Lack of Parental Consent (18-21)',
+                'Unsound Mind at time of marriage',
+                'Consent by Fraud',
+                'Consent by Force or Intimidation',
+                'Physical Incapacity (Impotence)',
+                'Incurable Sexually Transmissible Disease'
+            ].map(wrapLabel),
+            datasets: [{
+                label: 'Grounds',
+                data: [6, 5, 4, 3, 2, 1],
+                backgroundColor: [
+                    brilliantBlues.darkBlue, 
+                    brilliantBlues.midBlue, 
+                    brilliantBlues.purple, 
+                    brilliantBlues.magenta, 
+                    brilliantBlues.pink, 
+                    brilliantBlues.orange
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: 'Common Grounds for Annulment'
+                },
+                tooltip: { 
+                     callbacks: { 
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    display: false
+                }
+            }
+        }
+    });
+
+});
+</script>
+</body>
+</html>
