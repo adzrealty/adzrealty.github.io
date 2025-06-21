@@ -198,7 +198,7 @@
   --color-secondary-hover: rgba(94, 82, 64, 0.2);
   --color-secondary-active: rgba(94, 82, 64, 0.25);
   --color-border: rgba(94, 82, 64, 0.2);
-  --color-btn-primary-text: rgba(252, 252, 249, 1);
+  --color-btn-primary-text: rgb(241, 241, 3);
   --color-card-border: rgba(94, 82, 64, 0.12);
   --color-card-border-inner: rgba(94, 82, 64, 0.12);
   --color-error: rgba(192, 21, 47, 1);
@@ -658,7 +658,7 @@ select.form-control {
 
 :root {
   /* Philippine flag-inspired colors */
-  --ph-blue: #0038A8;
+  --ph-blue: #2f58aa;
   --ph-red: #CE1126;
   --ph-yellow: #FCD116;
   --ph-white: #FFFFFF;
@@ -670,7 +670,7 @@ select.form-control {
   --color-accent: var(--ph-red);
   --color-accent-light: rgba(206, 17, 38, 0.1);
   --color-highlight: var(--ph-yellow);
-  --color-highlight-light: rgba(252, 209, 22, 0.1);
+  --color-highlight-light: rgba(88, 65, 239, 0.1);
 }
 
 /* Header Styles */
