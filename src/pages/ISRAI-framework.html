@@ -473,6 +473,17 @@
     <script>
       // Wait for the DOM to be fully loaded before executing the script
       document.addEventListener('DOMContentLoaded', () => {
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // --- Chart.js ---
         const chartColors = {
           red: '#FF6B6B',
           yellow: '#FFD93D',
