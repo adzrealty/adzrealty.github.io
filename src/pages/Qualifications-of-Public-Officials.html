@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippine National Officials Qualifications</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">Philippine National Officials</h1>
+                <p class="header-subtitle">Qualifications & Requirements</p>
+                <nav class="nav">
+                    <button class="nav-btn nav-btn--active" data-filter="all">All Positions</button>
+                    <button class="nav-btn" data-filter="Executive">Executive</button>
+                    <button class="nav-btn" data-filter="Legislative">Legislative</button>
+                    <button class="nav-btn" data-filter="Judicial">Judicial</button>
+                    <button class="nav-btn" data-filter="Constitutional">Constitutional Commissions & Offices</button>
+                    <button class="nav-btn nav-btn--about" id="aboutBtn">About</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section" id="welcomeSection">
+            <div class="welcome-content">
+                <h2>Welcome to the Philippine National Officials Qualifications Guide</h2>
+                <p>This interactive application provides comprehensive information about the qualifications required for national-level public officials in the Philippines. Explore the requirements for different positions across all branches of government.</p>
+                <div class="welcome-features">
+                    <div class="feature">
+                        <h3>🏛️ Browse by Branch</h3>
+                        <p>Filter positions by Executive, Legislative, Judicial, and Constitutional branches</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🔍 Search & Filter</h3>
+                        <p>Quickly find specific positions or qualifications</p>
+                    </div>
+                    <div class="feature">
+                        <h3>⚖️ Compare Positions</h3>
+                        <p>Compare qualifications across multiple positions side by side</p>
+                    </div>
+                </div>
+                <button class="btn btn--primary btn--lg" id="exploreBtn">Start Exploring</button>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section" id="searchSection" style="display: none;">
+            <div class="search-container">
+                <input type="text" class="form-control search-input" id="searchInput" placeholder="Search positions or qualifications...">
+                <div class="comparison-controls">
+                    <button class="btn btn--secondary" id="compareBtn" disabled>Compare Selected (0)</button>
+                    <button class="btn btn--outline" id="clearBtn">Clear All</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="main-content" id="mainContent" style="display: none;">
+            <div class="positions-grid" id="positionsGrid">
+                <!-- Position cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Comparison Modal -->
+        <div class="modal" id="comparisonModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Position Comparison</h2>
+                    <button class="modal-close" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="comparison-table-container">
+                        <table class="comparison-table" id="comparisonTable">
+                            <!-- Comparison table will be dynamically generated -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div class="modal" id="aboutModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>About This Application</h2>
+                    <button class="modal-close" id="closeAboutModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="about-content">
+                        <h3>Purpose</h3>
+                        <p>This application serves as a comprehensive reference guide for understanding the qualifications required for national-level public officials in the Philippines. It is designed to promote transparency and civic education by making this important information easily accessible.</p>
+                        
+                        <h3>Importance of Qualifications</h3>
+                        <p>The qualifications for public officials are established by the 1987 Philippine Constitution and various laws to ensure that those who serve in government possess the necessary competencies, integrity, and commitment to public service. These requirements help maintain the quality and legitimacy of public governance.</p>
+                        
+                        <div class="qualifications-chart">
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1750520789/pplx_code_interpreter/527997a0_vwckih.jpg" alt="Qualifications of National-Level Public Officials in the Philippines" class="chart-img">
+                            <p class="chart-caption">Comprehensive overview of qualifications for Philippine national officials</p>
+                        </div>
+                        
+                        <h3>Coverage</h3>
+                        <p>This application covers positions across all branches of government:</p>
+                        <ul>
+                            <li><strong>Executive Branch:</strong> President, Vice-President, Cabinet members</li>
+                            <li><strong>Legislative Branch:</strong> Senators, Representatives</li>
+                            <li><strong>Judicial Branch:</strong> Supreme Court, appellate courts</li>
+                            <li><strong>Constitutional Bodies:</strong> Commissions and independent offices</li>
+                        </ul>
+                        
+                        <h3>Data Source</h3>
+                        <p>All information is based on the 1987 Philippine Constitution and relevant Philippine laws and statutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ADZ.PH. Philippine National Officials Qualifications Guide. Data based on the 1987 Philippine Constitution and relevant laws.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
