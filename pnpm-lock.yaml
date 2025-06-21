@@ -42,7 +42,7 @@ importers:
         specifier: ^0.34.2
         version: 0.34.2
       tailwindcss:
-        specifier: ^4.1.10
+        specifier: ^4.1.8
         version: 4.1.10
     devDependencies:
       '@astrojs/check':
@@ -52,7 +52,7 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       '@shikijs/transformers':
-        specifier: ^3.7.0
+        specifier: ^3.6.0
         version: 3.7.0
       '@tailwindcss/typography':
         specifier: ^0.5.16
@@ -61,10 +61,10 @@ importers:
         specifier: ^4.1.9
         version: 4.1.9
       '@typescript-eslint/parser':
-        specifier: ^8.34.1
+        specifier: ^8.34.0
         version: 8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
       eslint:
-        specifier: ^9.29.0
+        specifier: ^9.28.0
         version: 9.29.0(jiti@2.4.2)
       eslint-plugin-astro:
         specifier: ^1.3.1
@@ -82,13 +82,13 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.13
+        specifier: ^0.6.12
         version: 0.6.13(prettier-plugin-astro@0.14.1)(prettier@3.5.3)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
       typescript-eslint:
-        specifier: ^8.34.1
+        specifier: ^8.34.0
         version: 8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
 
 packages:
