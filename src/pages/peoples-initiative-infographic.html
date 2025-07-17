@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People's Initiative Infographic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .infographic-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+            height: calc(100vh - 40px);
+        }
+        
+        .slide-box {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 3px solid #ffd700;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .slide-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .slide-box.active {
+            border-color: #e74c3c;
+            box-shadow: 0 12px 35px rgba(231, 76, 60, 0.3);
+            transform: scale(1.02);
+        }
+        
+        .slide-box.inactive {
+            opacity: 0.7;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            background: #2a5298;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .slide-title {
+            color: #2a5298;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .slide-title.flag-header {
+            background: linear-gradient(to right, #0038a8 33%, #ce1126 33%, #ce1126 66%, #fcd116 66%);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin: -10px -5px 15px -5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slide-title.flag-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .slide-content {
+            color: #333;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        .highlight-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+        
+        .flag-bg {
+            /* Removed background styling - now applied to title only */
+        }
+        
+        .philippines-icon {
+            width: 40px;
+            height: 40px;
+            background: #2a5298;
+            border-radius: 5px;
+            margin: 10px auto;
+            position: relative;
+        }
+        
+        .philippines-icon::after {
+            content: "🇵🇭";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+        }
+        
+        .checkmark {
+            color: #27ae60;
+            font-size: 24px;
+            margin: 5px;
+        }
+        
+        .signature-visual {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        
+        .district-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px;
+            margin: 10px 0;
+        }
+        
+        .district-box {
+            background: #3498db;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 10px;
+            text-align: center;
+        }
+        
+        .amendment-icon {
+            background: #27ae60;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            margin: 5px;
+            font-size: 16px;
+        }
+        
+        .revision-icon {
+            background: #e74c3c;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            margin: 5px;
+            font-size: 16px;
+        }
+        
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .popup-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border: 3px solid #2a5298;
+            position: relative;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .popup-close:hover {
+            background: #c0392b;
+        }
+        
+        .clickable-info {
+            color: #e74c3c;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+        .clickable-info:hover {
+            color: #c0392b;
+        }
+        
+        .more-link {
+            color: #3498db;
+            cursor: pointer;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        
+        .people-group {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        
+        .person-icon {
+            width: 15px;
+            height: 15px;
+            background: #3498db;
+            border-radius: 50%;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic-container">
+        <!-- Slide 1: Title -->
+        <div class="slide-box" onclick="highlightSlide(1)">
+            <div class="slide-number">1</div>
+            <div class="slide-title flag-header">People's Initiative: The Power in Your Hands</div>
+            <div class="philippines-icon"></div>
+            <div class="slide-content">Understanding the Requirements for Constitutional Amendments</div>
+            <div class="people-group">
+                <div class="person-icon"></div>
+                <div class="person-icon"></div>
+                <div class="person-icon"></div>
+                <div class="person-icon"></div>
+                <div class="person-icon"></div>
+            </div>
+        </div>
+
+        <!-- Slide 2: What is People's Initiative -->
+        <div class="slide-box" onclick="highlightSlide(2)">
+            <div class="slide-number">2</div>
+            <div class="slide-title">What is a People's Initiative?</div>
+            <div style="font-size: 30px; margin: 10px 0;">✍️</div>
+            <div class="slide-content">
+                <strong>A Form of Direct Democracy</strong><br>
+                Article XVII, Section 2 empowers citizens to directly propose amendments as an alternative to congressional proposal, but only after Congress provides the necessary implementing legislation.<br><br>
+                <span class="clickable-info" onclick="event.stopPropagation(); showPopup('currentStatus')">⚠️ Current Status</span> | 
+                <span class="more-link" onclick="event.stopPropagation(); showPopup('moreDetails')">(more...)</span>
+            </div>
+        </div>
+
+        <!-- Slide 3: Two-Fold Requirement -->
+        <div class="slide-box" onclick="highlightSlide(3)">
+            <div class="slide-number">3</div>
+            <div class="slide-title">The Two-Fold Signature Requirement</div>
+            <div style="display: flex; justify-content: space-between; margin: 15px 0; gap: 20px;">
+                <div style="flex: 1; text-align: center; background: #f8f9fa; padding: 10px; border-radius: 8px; border: 2px solid #27ae60;">
+                    <div class="checkmark">✓</div>
+                    <div style="font-size: 12px; font-weight: bold; color: #2a5298;">NATIONAL</div>
+                </div>
+                <div style="flex: 1; text-align: center; background: #f8f9fa; padding: 10px; border-radius: 8px; border: 2px solid #27ae60;">
+                    <div class="checkmark">✓</div>
+                    <div style="font-size: 12px; font-weight: bold; color: #2a5298;">LOCAL</div>
+                </div>
+            </div>
+            <div class="slide-content">
+                Both mandatory requirements must be satisfied simultaneously. Fulfilling only one is not enough.
+            </div>
+        </div>
+
+        <!-- Slide 4: National Threshold -->
+        <div class="slide-box" onclick="highlightSlide(4)">
+            <div class="slide-number">4</div>
+            <div class="slide-title">Requirement #1: National Threshold</div>
+            <div class="highlight-number">12%</div>
+            <div class="signature-visual">At least 12% of Total Registered Voters</div>
+            <div class="slide-content">
+                Example: 68M voters × 0.12 = <strong>8.16M signatures</strong><br>
+                Ensures significant nationwide backing
+            </div>
+        </div>
+
+        <!-- Slide 5: District Threshold -->
+        <div class="slide-box" onclick="highlightSlide(5)">
+            <div class="slide-number">5</div>
+            <div class="slide-title">Requirement #2: District Threshold</div>
+            <div class="highlight-number">3%</div>
+            <div class="slide-content">
+                <strong>In EVERY Legislative District</strong>
+            </div>
+            <div class="district-grid">
+                <div class="district-box">3%</div>
+                <div class="district-box">3%</div>
+                <div class="district-box">3%</div>
+                <div class="district-box">3%</div>
+                <div class="district-box">3%</div>
+                <div class="district-box">3%</div>
+            </div>
+            <div class="slide-content">
+                If even ONE district fails to meet 3%, the entire initiative fails.
+            </div>
+        </div>
+
+        <!-- Slide 6: Visual Summary -->
+        <div class="slide-box" onclick="highlightSlide(6)">
+            <div class="slide-number">6</div>
+            <div class="slide-title">Visual Summary</div>
+            <div style="margin: 10px 0;">📝 ➡️ 📊</div>
+            <div class="slide-content">
+                <div class="checkmark" style="display: inline;">✅</div> 12% National<br>
+                <div class="checkmark" style="display: inline;">✅</div> 3% Every District<br>
+                ⬇️<br>
+                <strong>Submit to COMELEC</strong>
+            </div>
+        </div>
+
+        <!-- Slide 7: Amendment vs Revision -->
+        <div class="slide-box" onclick="highlightSlide(7)">
+            <div class="slide-number">7</div>
+            <div class="slide-title">Amendment vs. Revision</div>
+            <div style="display: flex; justify-content: space-around; margin: 10px 0;">
+                <div>
+                    <div class="amendment-icon">🔧</div>
+                    <div style="font-size: 11px;"><strong>Amendment</strong><br>Specific changes<br>✅ Allowed</div>
+                </div>
+                <div>
+                    <div class="revision-icon">📋</div>
+                    <div style="font-size: 11px;"><strong>Revision</strong><br>Complete overhaul<br>❌ Not Allowed</div>
+                </div>
+            </div>
+            <div class="slide-content">
+                <em>Defensor Santiago v. Commission on Elections (1997)</em>: People's Initiative for amendments only, not revisions.<br><br>
+                <strong>⏱️ Timing Limits:</strong> 5-year moratorium after Constitution's ratification; no more than once every 5 years thereafter.
+            </div>
+        </div>
+
+        <!-- Slide 8: Legal Status & Implementation -->
+        <div class="slide-box" onclick="highlightSlide(8)">
+            <div class="slide-number">8</div>
+            <div class="slide-title">Current Legal Status</div>
+            <div style="font-size: 24px; margin: 10px 0;">⚖️</div>
+            <div class="slide-content">
+                <strong>🚫 Not Self-Executory</strong><br>
+                Article XVII, Section 2 requires implementing legislation.<br><br>
+                <span class="clickable-info" onclick="event.stopPropagation(); showPopup('legalStatus')">📋 Verification Standards</span><br>
+                <span class="clickable-info" onclick="event.stopPropagation(); showPopup('implementationGaps')">⚠️ Implementation Gaps</span><br><br>
+                <span class="more-link" onclick="event.stopPropagation(); showPopup('detailedLegal')">(detailed legal analysis...)</span>
+            </div>
+        </div>
+
+        <!-- Slide 9: Conclusion -->
+        <div class="slide-box" onclick="highlightSlide(9)">
+            <div class="slide-number">9</div>
+            <div class="slide-title">Conclusion</div>
+            <div style="display: flex; justify-content: space-between; margin: 10px 0; gap: 20px;">
+                <div style="flex: 1; text-align: center; background: #f8f9fa; padding: 8px; border-radius: 8px; border: 2px solid #e74c3c;">
+                    <div class="highlight-number" style="font-size: 24px;">12%</div>
+                    <div style="font-size: 10px; font-weight: bold; color: #2a5298;">NATIONAL</div>
+                </div>
+                <div style="flex: 1; text-align: center; background: #f8f9fa; padding: 8px; border-radius: 8px; border: 2px solid #e74c3c;">
+                    <div class="highlight-number" style="font-size: 24px;">3%</div>
+                    <div style="font-size: 10px; font-weight: bold; color: #2a5298;">EVERY DISTRICT</div>
+                </div>
+            </div>
+            <div class="slide-content">
+                A powerful tool requiring massive, coordinated, and widespread public support for constitutional change.
+            </div>
+            <div style="margin-top: 10px;">🧩🧩🧩</div>
+        </div>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <div id="popupText"></div>
+        </div>
+    </div>
+
+    <script>
+        function highlightSlide(slideNumber) {
+            // Remove active/inactive classes from all slides
+            const allSlides = document.querySelectorAll('.slide-box');
+            allSlides.forEach(slide => {
+                slide.classList.remove('active', 'inactive');
+            });
+            
+            // Add active class to clicked slide
+            const clickedSlide = allSlides[slideNumber - 1];
+            clickedSlide.classList.add('active');
+            
+            // Add inactive class to all other slides
+            allSlides.forEach((slide, index) => {
+                if (index !== slideNumber - 1) {
+                    slide.classList.add('inactive');
+                }
+            });
+        }
+        
+        function showPopup(type) {
+            const popupOverlay = document.getElementById('popupOverlay');
+            const popupText = document.getElementById('popupText');
+            
+            if (type === 'currentStatus') {
+                popupText.innerHTML = `
+                    <h3 style="color: #2a5298; margin-bottom: 15px;">⚠️ Current Legal Status of People's Initiative</h3>
+                    <p><strong>Effectively Dormant:</strong> People's Initiative is currently not operational due to legal deficiencies.</p>
+                    <br>
+                    <p><strong>Supreme Court Ruling:</strong> The existing implementing legislation (Republic Act 6735) has been deemed "fatally defective" by the Supreme Court.</p>
+                    <br>
+                    <p><strong>Key Issues:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Inadequate verification procedures</li>
+                        <li>Insufficient safeguards against fraud</li>
+                        <li>Procedural gaps in implementation</li>
+                    </ul>
+                    <br>
+                    <p><strong>Required Action:</strong> Congress must enact proper implementing legislation before People's Initiative can be used.</p>
+                `;
+            } else if (type === 'moreDetails') {
+                popupText.innerHTML = `
+                    <h3 style="color: #2a5298; margin-bottom: 15px;">📚 Additional Details on People's Initiative</h3>
+                    <p><strong>Constitutional Basis:</strong> Article XVII, Section 2 of the 1987 Philippine Constitution</p>
+                    <br>
+                    <p><strong>Not Self-Executory:</strong> The constitutional provision requires implementing legislation to be operational.</p>
+                    <br>
+                    <p><strong>Historical Context:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Included in 1987 Constitution as democratic reform</li>
+                        <li>Intended to provide alternative to legislative amendments</li>
+                        <li>Never successfully implemented due to legal challenges</li>
+                    </ul>
+                    <br>
+                    <p><strong>Verification Challenges:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Signature authentication across multiple districts</li>
+                        <li>Preventing duplicate signatures</li>
+                        <li>Ensuring geographical representation</li>
+                        <li>COMELEC oversight and validation</li>
+                    </ul>
+                `;
+            } else if (type === 'legalStatus') {
+                popupText.innerHTML = `
+                    <h3 style="color: #2a5298; margin-bottom: 15px;">📋 Verification Standards & Procedures</h3>
+                    <p><strong>Signature Authentication:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Verification of voter registration status</li>
+                        <li>Comparison with official voter records</li>
+                        <li>Cross-referencing across multiple databases</li>
+                        <li>Prevention of duplicate or fraudulent signatures</li>
+                    </ul>
+                    <br>
+                    <p><strong>Judicial Review Processes:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Supreme Court oversight of constitutional compliance</li>
+                        <li>Review of petition form and substance</li>
+                        <li>Determination of amendment vs. revision classification</li>
+                        <li>Final approval of constitutional changes</li>
+                    </ul>
+                    <br>
+                    <p><strong>COMELEC Oversight:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Registration of petition organizers</li>
+                        <li>Monitoring of signature collection process</li>
+                        <li>Validation of district-by-district requirements</li>
+                        <li>Certification of compliance with legal standards</li>
+                    </ul>
+                `;
+            } else if (type === 'implementationGaps') {
+                popupText.innerHTML = `
+                    <h3 style="color: #2a5298; margin-bottom: 15px;">⚠️ Implementation Gaps & Challenges</h3>
+                    <p><strong>Legislative Deficiencies:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Republic Act 6735 deemed inadequate by Supreme Court</li>
+                        <li>Insufficient procedural safeguards</li>
+                        <li>Lack of detailed verification mechanisms</li>
+                        <li>Unclear enforcement provisions</li>
+                    </ul>
+                    <br>
+                    <p><strong>Practical Challenges:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Massive logistical coordination required</li>
+                        <li>Ensuring geographic representation across 300+ districts</li>
+                        <li>Resource-intensive verification process</li>
+                        <li>Potential for manipulation or fraud</li>
+                    </ul>
+                    <br>
+                    <p><strong>Required Reforms:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>New comprehensive implementing legislation</li>
+                        <li>Enhanced verification and authentication systems</li>
+                        <li>Clear procedural guidelines and timelines</li>
+                        <li>Adequate funding and administrative support</li>
+                    </ul>
+                `;
+            } else if (type === 'detailedLegal') {
+                popupText.innerHTML = `
+                    <h3 style="color: #2a5298; margin-bottom: 15px;">⚖️ Detailed Legal Analysis</h3>
+                    <p><strong>Constitutional Framework:</strong></p>
+                    <p>Article XVII, Section 2 establishes People's Initiative as a mode of constitutional amendment, but Supreme Court jurisprudence has clarified significant limitations and requirements.</p>
+                    <br>
+                    <p><strong>Key Supreme Court Rulings:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li><em>Defensor Santiago v. COMELEC (1997)</em> - Amendment vs. revision distinction</li>
+                        <li><em>Lambino v. COMELEC (2006)</em> - Implementing legislation requirements</li>
+                        <li>Multiple cases declaring RA 6735 inadequate</li>
+                    </ul>
+                    <br>
+                    <p><strong>Legal Requirements for Valid Implementation:</strong></p>
+                    <ul style="text-align: left; margin: 10px 0;">
+                        <li>Comprehensive implementing legislation addressing all procedural gaps</li>
+                        <li>Robust verification and authentication mechanisms</li>
+                        <li>Clear distinction between amendments and revisions</li>
+                        <li>Adequate safeguards against fraud and manipulation</li>
+                        <li>Proper administrative and judicial oversight mechanisms</li>
+                    </ul>
+                    <br>
+                    <p><strong>Current Legal Status:</strong> People's Initiative remains constitutionally available but practically unavailable until Congress enacts proper implementing legislation that meets Supreme Court standards.</p>
+                `;
+            }
+            
+            popupOverlay.style.display = 'flex';
+        }
+        
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+        
+        // Close popup when clicking outside
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+        
+        // Optional: Click anywhere outside slides to reset
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.slide-box') && !e.target.closest('.popup-overlay')) {
+                const allSlides = document.querySelectorAll('.slide-box');
+                allSlides.forEach(slide => {
+                    slide.classList.remove('active', 'inactive');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
