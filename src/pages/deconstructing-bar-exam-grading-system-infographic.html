@@ -132,14 +132,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="bg-white rounded-lg shadow-md p-6 text-center">
                         <p class="text-lg font-semibold text-[#0077B6]">2022 Bar Topnotcher's Score</p>
-                        <p class="text-7xl font-extrabold text-[#03045E] my-4">89.9675%</p>
+                        <p class="text-7xl font-extrabold text-[#03045E] my-4">89.2625%</p>
                         <p class="text-gray-600">This level of precision is impossible with a simple 5-point integer scale, highlighting the need for fractional grading to differentiate elite performance.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <div class="chart-container" style="height:300px; max-height:40vh;">
                             <canvas id="topnotcherChart"></canvas>
                         </div>
-                        <p class="text-center text-gray-600 mt-4">Only 3.28% of the 9,183 examinees in the 2023 Bar Exams passed with "Exemplary" performance (above 85%).</p>
+                        <p class="text-center text-gray-600 mt-4">Only 36.77% (3,812) of the 10,387 examinees completed all the tests during the three days of the exams passed the 2023 Bar Examinations.</p>
                     </div>
                 </div>
             </section>
@@ -306,10 +306,10 @@
         };
 
         const topnotcherData = {
-            labels: ['Exemplary Passers (≥85%)', 'Other Passers & Non-Passers'],
+            labels: ['Bar Passers (≥85%)', 'Others / Non-Passers'],
             datasets: [{
                 label: 'Examinee Performance',
-                data: [3.28, 96.72],
+                data: [36.77, 63.23],
                 backgroundColor: [
                     '#00B4D8',
                     '#ADE8F4'
