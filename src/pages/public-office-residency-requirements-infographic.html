@@ -1,475 +1,438 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #093c94; -webkit-text-stroke: #093c94}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0e6e6d; -webkit-text-stroke: #0e6e6d}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #18702b; -webkit-text-stroke: #18702b}
-    span.s1 {font-kerning: none; background-color: #ecf1f7}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
-    span.s5 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
-    span.s6 {font-kerning: none; color: #6b0001; background-color: #ecf1f7; -webkit-text-stroke: 0px #6b0001}
-    span.s7 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none; color: #137646; background-color: #ecf1f7; -webkit-text-stroke: 0px #137646}
-    span.s10 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
-    span.s11 {font-kerning: none}
-    span.s12 {font-kerning: none; color: #0e6e6d; background-color: #ecf1f7; -webkit-text-stroke: 0px #0e6e6d}
-    span.s13 {font-kerning: none; color: #a4450b; background-color: #ecf1f7; -webkit-text-stroke: 0px #a4450b}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Path to Public Office: A Guide to Residency Requirements in the Philippines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            min-height: 80px;
+        }
+        .flowchart-arrow {
+            font-size: 2.5rem;
+            color: #0582CA;
+            margin: 0.5rem 0;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 768px) {
+            .flowchart-arrow {
+                transform: rotate(0deg);
+                margin: 0 1rem;
+            }
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0582CA;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"en"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">The Path to Public Office: A Guide to Residency Requirements in the Philippines</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.jsdelivr.net/npm/chart.js"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.gstatic.com"</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap"</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">body</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s1"> </span><span class="s7">'Inter'</span><span class="s1">, </span><span class="s8">sans-serif</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s8">#F8F9FA</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.chart-container</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">position:</span><span class="s1"> </span><span class="s8">relative</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s9">100%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-width:</span><span class="s1"> </span><span class="s9">600px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-left:</span><span class="s1"> </span><span class="s8">auto</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin-right:</span><span class="s1"> </span><span class="s8">auto</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s9">350px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">max-height:</span><span class="s1"> </span><span class="s9">450px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>@</span><span class="s6">media</span><span class="s1"> (</span><span class="s6">min-width:</span><span class="s1"> 768</span><span class="s6">px</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>.chart-container {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s9">400px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.flowchart-step</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">flex</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">align-items:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s8">center</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">text-align:</span><span class="s1"> </span><span class="s8">center</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">padding:</span><span class="s1"> </span><span class="s9">1rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s9">0.5rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-weight:</span><span class="s1"> </span><span class="s9">600</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">min-height:</span><span class="s1"> </span><span class="s9">80px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.flowchart-arrow</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-size:</span><span class="s1"> </span><span class="s9">2.5rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s8">#0582CA</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin:</span><span class="s1"> </span><span class="s9">0.5rem</span><span class="s1"> </span><span class="s9">0</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">rotate(</span><span class="s9">90deg</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>@</span><span class="s6">media</span><span class="s1"> (</span><span class="s6">min-width:</span><span class="s1"> 768</span><span class="s6">px</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>.flowchart-arrow {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">rotate(</span><span class="s9">0deg</span><span class="s8">)</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2">margin:</span><span class="s1"> </span><span class="s9">0</span><span class="s1"> </span><span class="s9">1rem</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">.loader</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s9">4px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#f3f3f3</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-top:</span><span class="s1"> </span><span class="s9">4px</span><span class="s1"> </span><span class="s8">solid</span><span class="s1"> </span><span class="s8">#0582CA</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-radius:</span><span class="s1"> </span><span class="s9">50%</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">width:</span><span class="s1"> </span><span class="s9">40px</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">height:</span><span class="s1"> </span><span class="s9">40px</span><span class="s1">;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s2">animation:</span><span class="s4"> </span><span class="s1">spin</span><span class="s4"> </span><span class="s9">1s</span><span class="s4"> </span><span class="s1">linear</span><span class="s4"> </span><span class="s1">infinite</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">margin:</span><span class="s1"> </span><span class="s9">20px</span><span class="s1"> </span><span class="s8">auto</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">@keyframes</span><span class="s1"> </span><span class="s8">spin</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s9">0%</span><span class="s1"> { </span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">rotate(</span><span class="s9">0deg</span><span class="s8">)</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s9">100%</span><span class="s1"> { </span><span class="s2">transform:</span><span class="s1"> </span><span class="s8">rotate(</span><span class="s9">360deg</span><span class="s8">)</span><span class="s1">; }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s3">&lt;</span><span class="s6">body</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-gray-800"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto p-4 md:p-8 max-w-7xl"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">header</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-12 md:mb-20"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl md:text-6xl font-black text-[#006494] mb-2"</span><span class="s3">&gt;</span><span class="s4">The Path to Public Office</span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl md:text-2xl text-[#0582CA]"</span><span class="s3">&gt;</span><span class="s1">A Visual Guide to Residency Requirements in the Philippines</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">header</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">main</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"space-y-16"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"local-government"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-8"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl font-bold text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">The Foundation: Local Government</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"max-w-3xl mx-auto mt-2 text-lg text-gray-600"</span><span class="s3">&gt;</span><span class="s1">The Local Government Code (R.A. 7160) establishes a single, uniform residency rule for all local elective positions, ensuring every candidate has a foundational connection to the community they wish to serve. This standard promotes decentralization and equal opportunity.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 md:grid-cols-3 gap-8 items-center"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"md:col-span-1 bg-white rounded-lg shadow-lg p-8 text-center flex flex-col justify-center items-center h-full border-t-8 border-[#00A6FB]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-8xl md:text-9xl font-black text-[#00A6FB]"</span><span class="s3">&gt;</span><span class="s4">1</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl font-bold text-[#006494]"</span><span class="s3">&gt;</span><span class="s4">Year</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mt-4 text-gray-600"</span><span class="s3">&gt;</span><span class="s1">Is the uniform residency requirement for all local elective officials, from Barangay Councilor to Provincial Governor, immediately preceding election day.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"md:col-span-2 bg-white rounded-lg shadow-lg p-6 border-t-8 border-[#00A6FB]"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-bold text-center mb-4 text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">Uniform Standard Across All Tiers</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-gray-600 mb-4"</span><span class="s3">&gt;</span><span class="s1">This chart visually confirms that the one-year residency rule applies equally to every local elective post, reinforcing the principle of a consistent community link.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"chart-container"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"localGovChart"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"legislative"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-8"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl font-bold text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">The People's Voice: The Legislature</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"max-w-3xl mx-auto mt-2 text-lg text-gray-600"</span><span class="s3">&gt;</span><span class="s1">Residency requirements for Congress are tiered to reflect the specific constituency of each legislator. This calibrated system balances direct local representation with a broader national perspective.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-lg p-6 md:p-8 border-t-8 border-[#FBAF00]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-bold text-center mb-4 text-[#006494]"</span><span class="s3">&gt;</span><span class="s4">A Tale of Three Mandates</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-gray-600 mb-4"</span><span class="s3">&gt;</span><span class="s1">The required residency period and location differ significantly between District Representatives, Party-List Representatives, and Senators, aligning with the scope of their mandate.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"chart-container"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"legislativeChart"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"executive"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-8"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl font-bold text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">The Highest Office: The Executive Branch</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"max-w-3xl mx-auto mt-2 text-lg text-gray-600"</span><span class="s3">&gt;</span><span class="s1">Reflecting the immense responsibility of leading the nation, the Constitution imposes the most stringent residency requirement on the President and Vice-President, ensuring a deep, long-term connection to the country.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-lg p-8 text-center flex flex-col justify-center items-center border-t-8 border-[#006494]"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-8xl md:text-9xl font-black text-[#006494]"</span><span class="s3">&gt;</span><span class="s4">10</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl font-bold text-[#0582CA]"</span><span class="s3">&gt;</span><span class="s4">Years</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mt-4 text-gray-600 max-w-xl mx-auto"</span><span class="s3">&gt;</span><span class="s1">Is the required residency in the Philippines for any candidate for President or Vice-President. This decade-long rule serves as a constitutional test of unwavering allegiance and profound national familiarity.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"generateProfileBtn"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-6 bg-[#00A6FB] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[#0582CA] transition-colors duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>✨ Generate Hypothetical Candidate Profile</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"judiciary"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-8"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl font-bold text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">A Different Standard: The Judiciary</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"max-w-3xl mx-auto mt-2 text-lg text-gray-600"</span><span class="s3">&gt;</span><span class="s1">To safeguard judicial independence, judges are not required to reside in the locality they serve. Instead, their qualification is a "professional domicile"—a mandated period of legal practice or judicial service within the Philippines.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-lg p-6 md:p-8 border-t-8 border-[#0582CA]"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-bold text-center mb-4 text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">The Ladder of Legal Experience</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-center text-gray-600 mb-4"</span><span class="s3">&gt;</span><span class="s1">The required years of legal practice increase with the seniority of the court, ensuring that judicial competence and experience align with the court's level of authority.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"chart-container"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">canvas</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"judiciaryChart"</span><span class="s3">&gt;&lt;/</span><span class="s6">canvas</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"flowchart"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-12"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl font-bold text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">The Complete Ladder of Governance</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"max-w-3xl mx-auto mt-2 text-lg text-gray-600"</span><span class="s3">&gt;</span><span class="s1">This flowchart illustrates the hierarchical path of elective office, from the local level to the highest national positions, summarizing the distinct residency requirement at each major step.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flowchart-step bg-[#00A6FB] text-white w-full md:w-1/4"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">Local Officials</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">(Barangay to Governor)</span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">1 Year in LGU</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"flowchart-arrow"</span><span class="s3">&gt;</span><span class="s1">➔</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flowchart-step bg-[#FBAF00] text-[#006494] w-full md:w-1/4"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">Legislators</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">(House &amp; Senate)</span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">1-2 Years in District/PH</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"flowchart-arrow"</span><span class="s3">&gt;</span><span class="s1">➔</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flowchart-step bg-[#006494] text-white w-full md:w-1/4"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">President &amp; VP</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">10 Years in the Philippines</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"gemini-ask"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mb-8"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl font-bold text-[#006494]"</span><span class="s3">&gt;</span><span class="s1">Have a Question? ✨ Ask Our AI Assistant</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"max-w-3xl mx-auto mt-2 text-lg text-gray-600"</span><span class="s3">&gt;</span><span class="s1">Enter a question about Philippine election law or qualifications for public office, and our AI will provide an informative answer.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6 md:p-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex flex-col sm:flex-row gap-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"userQuestion"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"flex-grow p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A6FB] focus:border-transparent transition"</span><span class="s4"> </span><span class="s2">placeholder</span><span class="s3">=</span><span class="s1">"e.g., What is the age requirement for a senator?"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"askButton"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-[#006494] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[#0582CA] transition-colors duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>Ask Question</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"geminiResponse"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-6 p-6 bg-gray-50 rounded-lg min-h-[100px] text-gray-700 whitespace-pre-wrap"</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"display: none;"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"geminiLoader"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"loader"</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"display: none;"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">main</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">footer</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-center mt-20 pt-8 border-t border-gray-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-600"</span><span class="s3">&gt;</span><span class="s1">Data sourced from the 1987 Philippine Constitution, R.A. 7160, and R.A. 7941. AI features powered by Google Gemini.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-sm text-gray-400 mt-2"</span><span class="s3">&gt;</span><span class="s1">This infographic provides a summary for informational purposes and does not constitute legal advice.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">footer</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"profileModal"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 relative animate-fade-in-up"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"closeModalBtn"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl"</span><span class="s3">&gt;</span><span class="s4">&amp;times;</span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-2xl font-bold text-[#006494] mb-4"</span><span class="s3">&gt;</span><span class="s1">Hypothetical Candidate Profile</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"modalLoader"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"loader"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"profileContent"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-gray-700 space-y-4"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> </span><span class="s12">FONT_COLOR</span><span class="s1"> = </span><span class="s7">'#374151'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> </span><span class="s12">GRID_COLOR</span><span class="s1"> = </span><span class="s7">'#E5E7EB'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> </span><span class="s12">PALETTE</span><span class="s1"> = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>brightBlue: </span><span class="s7">'#00A6FB'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>mediumBlue: </span><span class="s7">'#0582CA'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>darkBlue: </span><span class="s7">'#006494'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>gold: </span><span class="s7">'#FBAF00'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">function</span><span class="s1"> wrapLabel(str, maxWidth) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">if</span><span class="s1"> (str.length &lt;= maxWidth) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">return</span><span class="s1"> str;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s1"> words = str.split(</span><span class="s7">' '</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s1"> lines = [];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">let</span><span class="s1"> currentLine = </span><span class="s7">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">for</span><span class="s1"> (</span><span class="s10">const</span><span class="s1"> word </span><span class="s10">of</span><span class="s1"> words) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">if</span><span class="s1"> ((currentLine + word).length &gt; maxWidth &amp;&amp; currentLine.length &gt; </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>lines.push(currentLine.trim());</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>currentLine = </span><span class="s7">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>currentLine += word + </span><span class="s7">' '</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>lines.push(currentLine.trim());</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">return</span><span class="s1"> lines;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> tooltipTitleCallback = (tooltipItems) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s1"> item = tooltipItems[</span><span class="s13">0</span><span class="s1">];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">let</span><span class="s1"> label = item.chart.data.labels[item.dataIndex];</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">if</span><span class="s1"> (</span><span class="s12">Array</span><span class="s1">.isArray(label)) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">return</span><span class="s1"> label.join(</span><span class="s7">' '</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">return</span><span class="s1"> label;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s4"> </span><span class="s1">SHARED_CHART_OPTIONS</span><span class="s4"> = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>maintainAspectRatio: </span><span class="s10">false</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>responsive: </span><span class="s10">true</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>plugins: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>legend: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>display: </span><span class="s10">false</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>tooltip: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>callbacks: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>title: tooltipTitleCallback</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: </span><span class="s7">'#FFFFFF'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>titleColor: </span><span class="s7">'#374151'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>bodyColor: </span><span class="s7">'#374151'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: </span><span class="s7">'#E5E7EB'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderWidth: </span><span class="s13">1</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>padding: </span><span class="s13">10</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>displayColors: </span><span class="s10">false</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>scales: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>y: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>beginAtZero: </span><span class="s10">true</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>grid: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>color: </span><span class="s12">GRID_COLOR</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>ticks: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>color: </span><span class="s12">FONT_COLOR</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>font: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>weight: </span><span class="s7">'600'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>x: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>grid: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>display: </span><span class="s10">false</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>ticks: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>color: </span><span class="s12">FONT_COLOR</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>font: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>weight: </span><span class="s7">'600'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> localGovLabels = [</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Sangguniang Barangay Member'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Punong Barangay'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Sangguniang Bayan/Panlungsod Member'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Municipal/City Vice-Mayor'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Municipal/City Mayor'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Sangguniang Panlalawigan Member'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Vice-Governor'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">'Governor'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>].map(label =&gt; wrapLabel(label, </span><span class="s13">16</span><span class="s1">));</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">new</span><span class="s1"> </span><span class="s12">Chart</span><span class="s1">(document.getElementById(</span><span class="s7">'localGovChart'</span><span class="s1">), {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>type: </span><span class="s7">'bar'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>data: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>labels: localGovLabels,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>datasets: [{</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">                    </span>label: </span><span class="s1">'Residency Requirement (Years)'</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>data: [</span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: </span><span class="s12">PALETTE</span><span class="s1">.brightBlue,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: </span><span class="s12">PALETTE</span><span class="s1">.mediumBlue,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderWidth: </span><span class="s13">2</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderRadius: </span><span class="s13">5</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}]</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>options: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">, scales: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales, y: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.y, max: </span><span class="s13">2</span><span class="s1">, ticks: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.y.ticks, stepSize: </span><span class="s13">1</span><span class="s1"> } } } }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> legislativeLabels = [</span><span class="s7">'District Representative'</span><span class="s1">, </span><span class="s7">'Party-List Representative'</span><span class="s1">, </span><span class="s7">'Senator'</span><span class="s1">].map(label =&gt; wrapLabel(label, </span><span class="s13">16</span><span class="s1">));</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">new</span><span class="s1"> </span><span class="s12">Chart</span><span class="s1">(document.getElementById(</span><span class="s7">'legislativeChart'</span><span class="s1">), {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>type: </span><span class="s7">'bar'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>data: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>labels: legislativeLabels,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>datasets: [{</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">                    </span>label: </span><span class="s1">'Residency Requirement (Years)'</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>data: [</span><span class="s13">1</span><span class="s1">, </span><span class="s13">1</span><span class="s1">, </span><span class="s13">2</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: [</span><span class="s12">PALETTE</span><span class="s1">.gold, </span><span class="s12">PALETTE</span><span class="s1">.gold, </span><span class="s12">PALETTE</span><span class="s1">.mediumBlue],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: [</span><span class="s12">PALETTE</span><span class="s1">.gold, </span><span class="s12">PALETTE</span><span class="s1">.gold, </span><span class="s12">PALETTE</span><span class="s1">.darkBlue],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderWidth: </span><span class="s13">2</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderRadius: </span><span class="s13">5</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}]</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>options: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">, scales: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales, y: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.y, max: </span><span class="s13">3</span><span class="s1">, ticks: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.y.ticks, stepSize: </span><span class="s13">1</span><span class="s1"> } }, x: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.x, ticks: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.x.ticks, font: { size: </span><span class="s13">14</span><span class="s1">, weight: </span><span class="s7">'600'</span><span class="s1"> } } } } }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> judiciaryLabels = [</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'First Level Court Judge'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Regional Trial Court Judge'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Sandiganbayan Justice'</span><span class="s4">,<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span>[</span><span class="s1">'Court of Appeals'</span><span class="s4">, </span><span class="s1">'Justice'</span><span class="s4">],<span class="Apple-converted-space"> </span></span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">'Supreme Court Justice'</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>].map(label =&gt; </span><span class="s12">Array</span><span class="s1">.isArray(label) ? label : wrapLabel(label, </span><span class="s13">16</span><span class="s1">));</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">new</span><span class="s1"> </span><span class="s12">Chart</span><span class="s1">(document.getElementById(</span><span class="s7">'judiciaryChart'</span><span class="s1">), {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>type: </span><span class="s7">'bar'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>data: {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>labels: judiciaryLabels,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>datasets: [{</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">                    </span>label: </span><span class="s1">'Required Years of Legal Practice'</span><span class="s4">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>data: [</span><span class="s13">5</span><span class="s1">, </span><span class="s13">10</span><span class="s1">, </span><span class="s13">10</span><span class="s1">, </span><span class="s13">15</span><span class="s1">, </span><span class="s13">15</span><span class="s1">],</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: </span><span class="s12">PALETTE</span><span class="s1">.mediumBlue,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: </span><span class="s12">PALETTE</span><span class="s1">.darkBlue,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderWidth: </span><span class="s13">2</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>borderRadius: </span><span class="s13">5</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}]</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>options: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">, scales: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales, y: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.y, max: </span><span class="s13">20</span><span class="s1">, ticks: { ...</span><span class="s12">SHARED_CHART_OPTIONS</span><span class="s1">.scales.y.ticks, stepSize: </span><span class="s13">5</span><span class="s1"> } } } }</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> askButton = document.getElementById(</span><span class="s7">'askButton'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> userQuestion = document.getElementById(</span><span class="s7">'userQuestion'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> geminiResponseEl = document.getElementById(</span><span class="s7">'geminiResponse'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> geminiLoader = document.getElementById(</span><span class="s7">'geminiLoader'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> generateProfileBtn = document.getElementById(</span><span class="s7">'generateProfileBtn'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> profileModal = document.getElementById(</span><span class="s7">'profileModal'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> closeModalBtn = document.getElementById(</span><span class="s7">'closeModalBtn'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> profileContent = document.getElementById(</span><span class="s7">'profileContent'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> modalLoader = document.getElementById(</span><span class="s7">'modalLoader'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">const</span><span class="s1"> apiKey = </span><span class="s7">""</span><span class="s1">;<span class="Apple-converted-space"> </span></span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s10">async</span><span class="s1"> </span><span class="s10">function</span><span class="s1"> callGemini(prompt) {</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s4"> apiUrl = </span><span class="s1">`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=</span><span class="s4">${apiKey}</span><span class="s1">`</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s1"> payload = {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>contents: [{ role: </span><span class="s7">"user"</span><span class="s1">, parts: [{ text: prompt }] }]</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">try</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">const</span><span class="s1"> response = </span><span class="s10">await</span><span class="s1"> fetch(apiUrl, {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>method: </span><span class="s7">'POST'</span><span class="s1">,</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>headers: { </span><span class="s7">'Content-Type'</span><span class="s1">: </span><span class="s7">'application/json'</span><span class="s1"> },</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>body: </span><span class="s12">JSON</span><span class="s1">.stringify(payload)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">if</span><span class="s1"> (!response.ok) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">throw</span><span class="s1"> </span><span class="s10">new</span><span class="s1"> </span><span class="s12">Error</span><span class="s1">(</span><span class="s7">`API call failed with status: </span><span class="s1">${response.status}</span><span class="s7">`</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">const</span><span class="s1"> result = </span><span class="s10">await</span><span class="s1"> response.json();</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">if</span><span class="s1"> (result.candidates &amp;&amp; result.candidates.length &gt; </span><span class="s13">0</span><span class="s1"> &amp;&amp; result.candidates[</span><span class="s13">0</span><span class="s1">].content.parts.length &gt; </span><span class="s13">0</span><span class="s1">) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">return</span><span class="s1"> result.candidates[</span><span class="s13">0</span><span class="s1">].content.parts[</span><span class="s13">0</span><span class="s1">].text;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>} </span><span class="s10">else</span><span class="s1"> {</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s10">return</span><span class="s4"> </span><span class="s1">"Sorry, I couldn't generate a response. The model's response was empty."</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>} </span><span class="s10">catch</span><span class="s1"> (error) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>console.error(</span><span class="s7">"Error calling Gemini API:"</span><span class="s1">, error);</span></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s10">return</span><span class="s4"> </span><span class="s1">`An error occurred: </span><span class="s4">${error.message}</span><span class="s1">. Please check the console for more details.`</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>askButton.addEventListener(</span><span class="s7">'click'</span><span class="s1">, </span><span class="s10">async</span><span class="s1"> () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s1"> question = userQuestion.value.trim();</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">if</span><span class="s1"> (!question) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>geminiResponseEl.textContent = </span><span class="s7">"Please enter a question."</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>geminiResponseEl.style.display = </span><span class="s7">'block'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">return</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>geminiLoader.style.display = </span><span class="s7">'block'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>geminiResponseEl.style.display = </span><span class="s7">'none'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>askButton.disabled = </span><span class="s10">true</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s4"> prompt = </span><span class="s1">`As a legal and political science expert on the Philippines, answer the following question clearly and concisely, based on Philippine law and the Constitution. Question: "</span><span class="s4">${question}</span><span class="s1">"`</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s1"> responseText = </span><span class="s10">await</span><span class="s1"> callGemini(prompt);</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>geminiResponseEl.textContent = responseText;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>geminiLoader.style.display = </span><span class="s7">'none'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>geminiResponseEl.style.display = </span><span class="s7">'block'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>askButton.disabled = </span><span class="s10">false</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>generateProfileBtn.addEventListener(</span><span class="s7">'click'</span><span class="s1">, </span><span class="s10">async</span><span class="s1"> () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>profileModal.style.display = </span><span class="s7">'flex'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>profileContent.innerHTML = </span><span class="s7">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>modalLoader.style.display = </span><span class="s7">'block'</span><span class="s1">;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p9"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s4"> prompt = </span><span class="s1">`Create a short, plausible, and hypothetical biography for a Philippine presidential candidate. The candidate must be at least 40 years old, a natural-born Filipino citizen, a registered voter, able to read and write, and must have resided in the Philippines for at least 10 years immediately preceding the election. Make the biography engaging and creative, detailing their background, career, and how they meet the 10-year residency requirement.`</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">const</span><span class="s1"> responseText = </span><span class="s10">await</span><span class="s1"> callGemini(prompt);</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>modalLoader.style.display = </span><span class="s7">'none'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>profileContent.innerHTML = responseText.replace(</span><span class="s6">/\n/</span><span class="s10">g</span><span class="s1">, </span><span class="s7">'&lt;br&gt;'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>closeModalBtn.addEventListener(</span><span class="s7">'click'</span><span class="s1">, () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>profileModal.style.display = </span><span class="s7">'none'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>window.addEventListener(</span><span class="s7">'click'</span><span class="s1">, (event) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s10">if</span><span class="s1"> (event.target === profileModal) {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>profileModal.style.display = </span><span class="s7">'none'</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p7"><span class="s11"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s11"></span><br></p>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12 md:mb-20">
+            <h1 class="text-4xl md:text-6xl font-black text-[#006494] mb-2">The Path to Public Office</h1>
+            <p class="text-xl md:text-2xl text-[#0582CA]">A Visual Guide to Residency Requirements in the Philippines</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="local-government">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#006494]">The Foundation: Local Government</h2>
+                    <p class="max-w-3xl mx-auto mt-2 text-lg text-gray-600">The Local Government Code (R.A. 7160) establishes a single, uniform residency rule for all local elective positions, ensuring every candidate has a foundational connection to the community they wish to serve. This standard promotes decentralization and equal opportunity.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1 bg-white rounded-lg shadow-lg p-8 text-center flex flex-col justify-center items-center h-full border-t-8 border-[#00A6FB]">
+                        <span class="text-8xl md:text-9xl font-black text-[#00A6FB]">1</span>
+                        <span class="text-4xl font-bold text-[#006494]">Year</span>
+                        <p class="mt-4 text-gray-600">Is the uniform residency requirement for all local elective officials, from Barangay Councilor to Provincial Governor, immediately preceding election day.</p>
+                    </div>
+                    <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 border-t-8 border-[#00A6FB]">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#006494]">Uniform Standard Across All Tiers</h3>
+                        <p class="text-center text-gray-600 mb-4">This chart visually confirms that the one-year residency rule applies equally to every local elective post, reinforcing the principle of a consistent community link.</p>
+                        <div class="chart-container">
+                            <canvas id="localGovChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="legislative">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#006494]">The People's Voice: The Legislature</h2>
+                    <p class="max-w-3xl mx-auto mt-2 text-lg text-gray-600">Residency requirements for Congress are tiered to reflect the specific constituency of each legislator. This calibrated system balances direct local representation with a broader national perspective.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 border-t-8 border-[#FBAF00]">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#006494]">A Tale of Three Mandates</h3>
+                     <p class="text-center text-gray-600 mb-4">The required residency period and location differ significantly between District Representatives, Party-List Representatives, and Senators, aligning with the scope of their mandate.</p>
+                    <div class="chart-container">
+                        <canvas id="legislativeChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="executive">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#006494]">The Highest Office: The Executive Branch</h2>
+                    <p class="max-w-3xl mx-auto mt-2 text-lg text-gray-600">Reflecting the immense responsibility of leading the nation, the Constitution imposes the most stringent residency requirement on the President and Vice-President, ensuring a deep, long-term connection to the country.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center flex flex-col justify-center items-center border-t-8 border-[#006494]">
+                    <span class="text-8xl md:text-9xl font-black text-[#006494]">10</span>
+                    <span class="text-4xl font-bold text-[#0582CA]">Years</span>
+                    <p class="mt-4 text-gray-600 max-w-xl mx-auto">Is the required residency in the Philippines for any candidate for President or Vice-President. This decade-long rule serves as a constitutional test of unwavering allegiance and profound national familiarity.</p>
+                    <button id="generateProfileBtn" class="mt-6 bg-[#00A6FB] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[#0582CA] transition-colors duration-300">
+                        ✨ Generate Hypothetical Candidate Profile
+                    </button>
+                </div>
+            </section>
+
+            <section id="judiciary">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#006494]">A Different Standard: The Judiciary</h2>
+                    <p class="max-w-3xl mx-auto mt-2 text-lg text-gray-600">To safeguard judicial independence, judges are not required to reside in the locality they serve. Instead, their qualification is a "professional domicile"—a mandated period of legal practice or judicial service within the Philippines.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 border-t-8 border-[#0582CA]">
+                     <h3 class="text-xl font-bold text-center mb-4 text-[#006494]">The Ladder of Legal Experience</h3>
+                     <p class="text-center text-gray-600 mb-4">The required years of legal practice increase with the seniority of the court, ensuring that judicial competence and experience align with the court's level of authority.</p>
+                    <div class="chart-container">
+                        <canvas id="judiciaryChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="flowchart">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-[#006494]">The Complete Ladder of Governance</h2>
+                    <p class="max-w-3xl mx-auto mt-2 text-lg text-gray-600">This flowchart illustrates the hierarchical path of elective office, from the local level to the highest national positions, summarizing the distinct residency requirement at each major step.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-step bg-[#00A6FB] text-white w-full md:w-1/4">
+                        <p><strong>Local Officials</strong><br>(Barangay to Governor)<br>1 Year in LGU</p>
+                    </div>
+                    <div class="flowchart-arrow">➔</div>
+                    <div class="flowchart-step bg-[#FBAF00] text-[#006494] w-full md:w-1/4">
+                        <p><strong>Legislators</strong><br>(House & Senate)<br>1-2 Years in District/PH</p>
+                    </div>
+                    <div class="flowchart-arrow">➔</div>
+                    <div class="flowchart-step bg-[#006494] text-white w-full md:w-1/4">
+                        <p><strong>President & VP</strong><br>10 Years in the Philippines</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gemini-ask">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-[#006494]">Have a Question? ✨ Ask Our AI Assistant</h2>
+                    <p class="max-w-3xl mx-auto mt-2 text-lg text-gray-600">Enter a question about Philippine election law or qualifications for public office, and our AI will provide an informative answer.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="text" id="userQuestion" class="flex-grow p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A6FB] focus:border-transparent transition" placeholder="e.g., What is the age requirement for a senator?">
+                        <button id="askButton" class="bg-[#006494] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[#0582CA] transition-colors duration-300">
+                            Ask Question
+                        </button>
+                    </div>
+                    <div id="geminiResponse" class="mt-6 p-6 bg-gray-50 rounded-lg min-h-[100px] text-gray-700 whitespace-pre-wrap" style="display: none;"></div>
+                    <div id="geminiLoader" class="loader" style="display: none;"></div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-20 pt-8 border-t border-gray-300">
+            <p class="text-gray-600">Data sourced from the 1987 Philippine Constitution, R.A. 7160, and R.A. 7941. AI features powered by Google Gemini.</p>
+            <p class="text-sm text-gray-400 mt-2">This infographic provides a summary for informational purposes and does not constitute legal advice.</p>
+        </footer>
+
+    </div>
+
+    <div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 relative animate-fade-in-up">
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+            <h3 class="text-2xl font-bold text-[#006494] mb-4">Hypothetical Candidate Profile</h3>
+            <div id="modalLoader" class="loader"></div>
+            <div id="profileContent" class="text-gray-700 space-y-4"></div>
+        </div>
+    </div>
+
+    <script>
+        const FONT_COLOR = '#374151';
+        const GRID_COLOR = '#E5E7EB';
+        const PALETTE = {
+            brightBlue: '#00A6FB',
+            mediumBlue: '#0582CA',
+            darkBlue: '#006494',
+            gold: '#FBAF00',
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const SHARED_CHART_OPTIONS = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#FFFFFF',
+                    titleColor: '#374151',
+                    bodyColor: '#374151',
+                    borderColor: '#E5E7EB',
+                    borderWidth: 1,
+                    padding: 10,
+                    displayColors: false,
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: GRID_COLOR,
+                    },
+                    ticks: {
+                        color: FONT_COLOR,
+                        font: {
+                            weight: '600'
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: FONT_COLOR,
+                        font: {
+                            weight: '600'
+                        }
+                    }
+                }
+            }
+        };
+
+        const localGovLabels = [
+            'Sangguniang Barangay Member', 
+            'Punong Barangay', 
+            'Sangguniang Bayan/Panlungsod Member', 
+            'Municipal/City Vice-Mayor', 
+            'Municipal/City Mayor', 
+            'Sangguniang Panlalawigan Member', 
+            'Vice-Governor', 
+            'Governor'
+        ].map(label => wrapLabel(label, 16));
+
+        new Chart(document.getElementById('localGovChart'), {
+            type: 'bar',
+            data: {
+                labels: localGovLabels,
+                datasets: [{
+                    label: 'Residency Requirement (Years)',
+                    data: [1, 1, 1, 1, 1, 1, 1, 1],
+                    backgroundColor: PALETTE.brightBlue,
+                    borderColor: PALETTE.mediumBlue,
+                    borderWidth: 2,
+                    borderRadius: 5,
+                }]
+            },
+            options: { ...SHARED_CHART_OPTIONS, scales: { ...SHARED_CHART_OPTIONS.scales, y: { ...SHARED_CHART_OPTIONS.scales.y, max: 2, ticks: { ...SHARED_CHART_OPTIONS.scales.y.ticks, stepSize: 1 } } } }
+        });
+
+        const legislativeLabels = ['District Representative', 'Party-List Representative', 'Senator'].map(label => wrapLabel(label, 16));
+
+        new Chart(document.getElementById('legislativeChart'), {
+            type: 'bar',
+            data: {
+                labels: legislativeLabels,
+                datasets: [{
+                    label: 'Residency Requirement (Years)',
+                    data: [1, 1, 2],
+                    backgroundColor: [PALETTE.gold, PALETTE.gold, PALETTE.mediumBlue],
+                    borderColor: [PALETTE.gold, PALETTE.gold, PALETTE.darkBlue],
+                    borderWidth: 2,
+                    borderRadius: 5,
+                }]
+            },
+            options: { ...SHARED_CHART_OPTIONS, scales: { ...SHARED_CHART_OPTIONS.scales, y: { ...SHARED_CHART_OPTIONS.scales.y, max: 3, ticks: { ...SHARED_CHART_OPTIONS.scales.y.ticks, stepSize: 1 } }, x: { ...SHARED_CHART_OPTIONS.scales.x, ticks: { ...SHARED_CHART_OPTIONS.scales.x.ticks, font: { size: 14, weight: '600' } } } } }
+        });
+
+        const judiciaryLabels = [
+            'First Level Court Judge', 
+            'Regional Trial Court Judge', 
+            'Sandiganbayan Justice', 
+            ['Court of Appeals', 'Justice'], 
+            'Supreme Court Justice'
+        ].map(label => Array.isArray(label) ? label : wrapLabel(label, 16));
+
+        new Chart(document.getElementById('judiciaryChart'), {
+            type: 'bar',
+            data: {
+                labels: judiciaryLabels,
+                datasets: [{
+                    label: 'Required Years of Legal Practice',
+                    data: [5, 10, 10, 15, 15],
+                    backgroundColor: PALETTE.mediumBlue,
+                    borderColor: PALETTE.darkBlue,
+                    borderWidth: 2,
+                    borderRadius: 5,
+                }]
+            },
+            options: { ...SHARED_CHART_OPTIONS, scales: { ...SHARED_CHART_OPTIONS.scales, y: { ...SHARED_CHART_OPTIONS.scales.y, max: 20, ticks: { ...SHARED_CHART_OPTIONS.scales.y.ticks, stepSize: 5 } } } }
+        });
+
+        const askButton = document.getElementById('askButton');
+        const userQuestion = document.getElementById('userQuestion');
+        const geminiResponseEl = document.getElementById('geminiResponse');
+        const geminiLoader = document.getElementById('geminiLoader');
+        const generateProfileBtn = document.getElementById('generateProfileBtn');
+        const profileModal = document.getElementById('profileModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const profileContent = document.getElementById('profileContent');
+        const modalLoader = document.getElementById('modalLoader');
+
+        const apiKey = ""; 
+
+        async function callGemini(prompt) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ role: "user", parts: [{ text: prompt }] }]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                } else {
+                    return "Sorry, I couldn't generate a response. The model's response was empty.";
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                return `An error occurred: ${error.message}. Please check the console for more details.`;
+            }
+        }
+
+        askButton.addEventListener('click', async () => {
+            const question = userQuestion.value.trim();
+            if (!question) {
+                geminiResponseEl.textContent = "Please enter a question.";
+                geminiResponseEl.style.display = 'block';
+                return;
+            }
+
+            geminiLoader.style.display = 'block';
+            geminiResponseEl.style.display = 'none';
+            askButton.disabled = true;
+
+            const prompt = `As a legal and political science expert on the Philippines, answer the following question clearly and concisely, based on Philippine law and the Constitution. Question: "${question}"`;
+            const responseText = await callGemini(prompt);
+            
+            geminiResponseEl.textContent = responseText;
+            geminiLoader.style.display = 'none';
+            geminiResponseEl.style.display = 'block';
+            askButton.disabled = false;
+        });
+
+        generateProfileBtn.addEventListener('click', async () => {
+            profileModal.style.display = 'flex';
+            profileContent.innerHTML = '';
+            modalLoader.style.display = 'block';
+
+            const prompt = `Create a short, plausible, and hypothetical biography for a Philippine presidential candidate. The candidate must be at least 40 years old, a natural-born Filipino citizen, a registered voter, able to read and write, and must have resided in the Philippines for at least 10 years immediately preceding the election. Make the biography engaging and creative, detailing their background, career, and how they meet the 10-year residency requirement.`;
+            const responseText = await callGemini(prompt);
+
+            modalLoader.style.display = 'none';
+            profileContent.innerHTML = responseText.replace(/\n/g, '<br>');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            profileModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === profileModal) {
+                profileModal.style.display = 'none';
+            }
+        });
+
+    </script>
 </body>
 </html>
